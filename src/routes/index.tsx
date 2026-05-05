@@ -306,12 +306,6 @@ function Hero() {
 
       {/* Main content */}
       <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-32">
-        <div
-          className="inline-block mb-6 px-4 py-2 rounded-full text-xs font-bold tracking-wider"
-          style={{ background: "rgba(245,200,66,0.15)", color: "#F5C842", border: "1px solid rgba(245,200,66,0.3)" }}
-        >
-          ⚽ MUMBAI'S ELITE FOOTBALL ACADEMY
-        </div>
 
         <h1 className="font-black text-white leading-[0.9] tracking-tight" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
           <div>TRAIN</div>
