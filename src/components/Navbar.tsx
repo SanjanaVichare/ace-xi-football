@@ -27,7 +27,7 @@ export default function Navbar() {
             className="w-10 h-10 object-contain"
           />
           <span className={`font-heading font-bold text-xl `}>
-            ACE <span className="text-ace-gold">Sports</span>
+            ACE <span className="text-ace-gold">XI</span>
           </span>
         </Link>
 
