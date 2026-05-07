@@ -13,6 +13,7 @@ import SaddamImg from "../assets/Saddam.jpeg";
 import AkashImg from "../assets/Akash.jpeg";
 import AdityaImg from "../assets/Aditya.jpeg";
 import HarshImg from "../assets/Harsh.png";
+import RohanImg from "../assets/Rohan.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,14 +35,11 @@ function Football() {
   useFrame(({ clock }) => {
     if (!ref.current) return;
     const t = clock.getElapsedTime();
-
     const bounce = Math.abs(Math.sin(t * 2.5));
     ref.current.position.y = bounce * 1.8 - 0.9;
-
     const spinBoost = 1 - bounce;
     ref.current.rotation.x += 0.03 + spinBoost * 0.07;
     ref.current.rotation.z += 0.008;
-
     const squash = 0.85 + bounce * 0.15;
     ref.current.scale.set(
       (1 / 55.92) * 1.8 * (1 + (1 - squash) * 0.15),
@@ -78,14 +76,12 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
   const [dots, setDots] = useState("");
   const [progress, setProgress] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
-
   const DURATION = 3200;
 
   useEffect(() => {
-    // Fade out then notify parent
     const timer = setTimeout(() => {
       setFadeOut(true);
-      setTimeout(onDone, 700); // wait for fade transition
+      setTimeout(onDone, 700);
     }, DURATION);
     return () => clearTimeout(timer);
   }, [onDone]);
@@ -124,7 +120,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
         transition: "opacity 0.7s ease",
       }}
     >
-      {/* Dot grid */}
       <div
         style={{
           position: "absolute",
@@ -135,8 +130,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
           backgroundSize: "40px 40px",
         }}
       />
-
-      {/* ACE XI wordmark */}
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",
@@ -150,8 +143,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
       >
         ACE XI
       </div>
-
-      {/* 3D Canvas */}
       <div style={{ position: "relative", width: 256, height: 256 }}>
         <Canvas
           camera={{ position: [0, 1, 8], fov: 35 }}
@@ -167,8 +158,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
           </Suspense>
         </Canvas>
       </div>
-
-      {/* Progress */}
       <div
         style={{
           marginTop: "1.5rem",
@@ -190,7 +179,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
         >
           Loading Experience{dots}
         </p>
-
         <div
           style={{
             width: 192,
@@ -210,7 +198,6 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
             }}
           />
         </div>
-
         <p
           style={{
             color: "rgba(255,255,255,0.3)",
@@ -272,7 +259,6 @@ function Hero() {
       className="relative overflow-hidden"
       style={{ background: "#0B0612", minHeight: "92vh" }}
     >
-      {/* Ghost XI */}
       <div
         className="hidden md:block absolute select-none pointer-events-none font-black"
         style={{
@@ -285,8 +271,6 @@ function Hero() {
       >
         XI
       </div>
-
-      {/* Diagonal slash */}
       <div
         className="absolute hidden md:block"
         style={{
@@ -303,16 +287,12 @@ function Hero() {
         className="absolute md:hidden left-0 right-0 bottom-0 h-32"
         style={{ background: "linear-gradient(135deg, #4B1FA7 0%, #F5C842 100%)" }}
       />
-
-      {/* Main content */}
       <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-32">
-
         <h1 className="font-black text-white leading-[0.9] tracking-tight" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
           <div>TRAIN</div>
           <div>LIKE A</div>
           <div style={{ color: "#F5C842" }} key={tick}>{words[tick % words.length]}</div>
         </h1>
-
         <div className="mt-10">
           <Link
             to="/contact"
@@ -370,7 +350,6 @@ function Programs() {
             Football by ACE XI
           </h2>
         </div>
-
         <div className="grid md:grid-cols-3 gap-6">
           {PROGRAMS.map((p) => (
             <div
@@ -515,7 +494,6 @@ function CoachCard({ coach, inView, delay }: {
           zIndex: 2,
         }}
       />
-
       <div style={{ position: "relative", height: "clamp(260px, 32vw, 340px)", flexShrink: 0 }}>
         <img
           src={coach.imagePath}
@@ -560,7 +538,6 @@ function CoachCard({ coach, inView, delay }: {
           {coach.badge}
         </span>
       </div>
-
       <div className="relative p-6 lg:p-8 flex flex-col flex-1">
         <p
           style={{
@@ -574,7 +551,6 @@ function CoachCard({ coach, inView, delay }: {
         >
           {coach.role}
         </p>
-
         <h3
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
@@ -590,7 +566,6 @@ function CoachCard({ coach, inView, delay }: {
         >
           {coach.name}
         </h3>
-
         <div
           style={{
             height: "1.5px",
@@ -600,7 +575,6 @@ function CoachCard({ coach, inView, delay }: {
             transition: "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
           }}
         />
-
         <p
           style={{
             fontSize: 13,
@@ -625,6 +599,10 @@ function Team() {
   const [contentInView, setContentInView] = useState(false);
   const [contentActive, setContentActive] = useState(false);
 
+  const founderRef = useRef<HTMLDivElement>(null);
+  const [founderInView, setFounderInView] = useState(false);
+  const [founderActive, setFounderActive] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setCoachInView(true); },
@@ -643,8 +621,18 @@ function Team() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setFounderInView(true); },
+      { threshold: 0.05 }
+    );
+    if (founderRef.current) observer.observe(founderRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
+      {/* ── COACHES GRID ── */}
       <section
         className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16"
         style={{ background: "#F5F4FF" }}
@@ -668,7 +656,6 @@ function Team() {
               Our <span style={{ color: "#4B1FA7" }}>Coaches</span>
             </h2>
           </div>
-
           <div
             ref={coachRef}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
@@ -685,6 +672,7 @@ function Team() {
         </div>
       </section>
 
+      {/* ── CONTENT LEAD ── */}
       <section
         className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16"
         style={{ background: "#fff" }}
@@ -708,7 +696,6 @@ function Team() {
               Our <span style={{ color: "#4B1FA7" }}>Content Lead</span>
             </h2>
           </div>
-
           <div className="max-w-sm mx-auto" ref={contentRef}>
             <div
               className="rounded-2xl overflow-hidden flex flex-col relative"
@@ -739,7 +726,6 @@ function Team() {
                   zIndex: 2,
                 }}
               />
-
               <div style={{ position: "relative", height: "clamp(260px, 32vw, 340px)", flexShrink: 0 }}>
                 <img
                   src={AdityaImg}
@@ -784,7 +770,6 @@ function Team() {
                   Content
                 </span>
               </div>
-
               <div className="relative p-6 lg:p-8 flex flex-col flex-1">
                 <p
                   style={{
@@ -798,7 +783,6 @@ function Team() {
                 >
                   Content Lead
                 </p>
-
                 <h3
                   style={{
                     fontFamily: "'Bebas Neue', sans-serif",
@@ -814,7 +798,6 @@ function Team() {
                 >
                   Aditya Dhurat
                 </h3>
-
                 <div
                   style={{
                     height: "1.5px",
@@ -824,7 +807,6 @@ function Team() {
                     transition: "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
                   }}
                 />
-
                 <p
                   style={{
                     fontSize: 13,
@@ -835,6 +817,158 @@ function Team() {
                   }}
                 >
                   The eye behind every frame. Aditya captures the energy, grit, and heart of ACE XI — turning every session and match into a story worth telling.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOUNDER ── */}
+      <section
+        className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16"
+        style={{ background: "#F5F4FF" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 lg:mb-14">
+            <p
+              className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
+              style={{ color: "#4B1FA7" }}
+            >
+              Where it all began
+            </p>
+            <h2
+              className="font-black uppercase leading-[0.88]"
+              style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: "clamp(2.8rem, 8vw, 5rem)",
+                color: "#0B0612",
+              }}
+            >
+              Our <span style={{ color: "#4B1FA7" }}>Founder</span>
+            </h2>
+          </div>
+          <div className="max-w-sm mx-auto" ref={founderRef}>
+            <div
+              className="rounded-2xl overflow-hidden flex flex-col relative"
+              style={{
+                background: "#4B1FA7",
+                minHeight: "clamp(320px, 44vw, 480px)",
+                opacity: founderInView ? 1 : 0,
+                transform: founderInView
+                  ? founderActive ? "scale(0.965) translateY(3px)" : "scale(1) translateY(0)"
+                  : "translateY(48px) scale(0.97)",
+                transition: founderInView
+                  ? "transform 0.32s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.32s ease, opacity 0.7s ease 0ms"
+                  : "opacity 0.7s ease 0ms, transform 0.7s ease 0ms",
+                boxShadow: founderActive ? "0 2px 10px rgba(0,0,0,0.18)" : "0 6px 24px rgba(0,0,0,0.09)",
+                cursor: "default",
+                WebkitTapHighlightColor: "transparent",
+                userSelect: "none",
+                willChange: "transform",
+              }}
+              onMouseEnter={() => setFounderActive(true)}
+              onMouseLeave={() => setFounderActive(false)}
+            >
+              <div
+                className="absolute inset-0 rounded-2xl pointer-events-none"
+                style={{
+                  background: founderActive ? "rgba(255,255,255,0.06)" : "transparent",
+                  transition: "background 0.2s ease",
+                  zIndex: 2,
+                }}
+              />
+              <div style={{ position: "relative", height: "clamp(260px, 32vw, 340px)", flexShrink: 0 }}>
+                <img
+                  src={RohanImg}
+                  alt="Rohan Rane"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    display: "block",
+                    transition: "transform 0.4s ease",
+                    transform: founderActive ? "scale(1.04)" : "scale(1)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(to bottom, transparent 50%, #4B1FA7 100%)",
+                    pointerEvents: "none",
+                    opacity: founderActive ? 0.45 : 0,
+                    transition: "opacity 0.35s ease",
+                  }}
+                />
+                <span
+                  style={{
+                    position: "absolute",
+                    top: 14,
+                    right: 14,
+                    fontSize: 9,
+                    fontWeight: 700,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    padding: "4px 10px",
+                    borderRadius: 999,
+                    background: "rgba(245,200,66,0.15)",
+                    color: "#F5C842",
+                    backdropFilter: "blur(6px)",
+                    zIndex: 1,
+                  }}
+                >
+                  Founder
+                </span>
+              </div>
+              <div className="relative p-6 lg:p-8 flex flex-col flex-1">
+                <p
+                  style={{
+                    fontSize: 9,
+                    fontWeight: 700,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    color: "#F5C842",
+                    marginBottom: 6,
+                  }}
+                >
+                  Founder
+                </p>
+                <h3
+                  style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: "clamp(1.75rem, 5vw, 2.6rem)",
+                    color: "#fff",
+                    letterSpacing: founderActive ? "0.025em" : "0em",
+                    lineHeight: 0.9,
+                    textTransform: "uppercase",
+                    transition: "letter-spacing 0.3s ease",
+                    marginBottom: 10,
+                    fontWeight: 900,
+                  }}
+                >
+                  Rohan Rane
+                </h3>
+                <div
+                  style={{
+                    height: "1.5px",
+                    marginBottom: 12,
+                    background: "rgba(255,255,255,0.22)",
+                    width: founderActive ? "100%" : "36%",
+                    transition: "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
+                  }}
+                />
+                <p
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 300,
+                    lineHeight: 1.65,
+                    flex: 1,
+                    color: "rgba(255,255,255,0.65)",
+                  }}
+                >
+                  The visionary who started it all. Rohan built ACE XI from the ground up with one belief — that every child deserves access to world-class football development. His drive and passion continue to shape everything the academy stands for.
                 </p>
               </div>
             </div>
@@ -897,7 +1031,6 @@ function Events() {
           <p className="mt-6 text-white/50 text-lg max-w-md">
             ACE XI has organized and hosted multiple tournaments across Mumbai, bringing together schools and academies citywide.
           </p>
-
           <div className="mt-12 inline-block">
             <div
               className="rounded-2xl px-8 py-6"
@@ -913,7 +1046,6 @@ function Events() {
             </div>
           </div>
         </div>
-
         <div className="flex flex-col">
           {EVENTS.map((ev) => {
             const isOpen = open === ev.num;
@@ -934,7 +1066,6 @@ function Events() {
                   >
                     {ev.num}
                   </span>
-
                   <div className="flex-1">
                     <div
                       className="font-bold text-lg transition-colors duration-300"
@@ -946,7 +1077,6 @@ function Events() {
                       {ev.detail}
                     </p>
                   </div>
-
                   <div className="flex items-center gap-3">
                     <span
                       className="hidden sm:inline text-xs font-bold px-3 py-1 rounded-full transition-all duration-300"
@@ -957,7 +1087,6 @@ function Events() {
                     >
                       {ev.tag}
                     </span>
-
                     <span
                       className="flex items-center justify-center rounded-full flex-shrink-0 transition-all duration-300"
                       style={{
@@ -986,7 +1115,6 @@ function Events() {
                     </span>
                   </div>
                 </button>
-
                 <div
                   style={{
                     display: "grid",
@@ -1079,7 +1207,6 @@ function Achievements() {
             Our<br />Achievements
           </h2>
         </div>
-
         <div
           className="rounded-3xl p-10 md:p-14 text-white transition-all duration-500"
           style={{ background: selected.bg, minHeight: 320 }}
@@ -1098,7 +1225,6 @@ function Achievements() {
             </div>
           </div>
         </div>
-
         <div className="flex justify-center gap-2 mt-8">
           {ACH.map((_, i) => (
             <button
@@ -1153,7 +1279,6 @@ function WhyACE() {
             Join ACE XI <ChevronRight size={18} />
           </Link>
         </div>
-
         <div className="grid sm:grid-cols-2 gap-5">
           {WHY.map((item) => (
             <div
@@ -1166,7 +1291,6 @@ function WhyACE() {
           ))}
         </div>
       </div>
-
       <div className="max-w-7xl mx-auto mt-20">
         <div
           className="rounded-3xl p-10 md:p-16 text-center"
