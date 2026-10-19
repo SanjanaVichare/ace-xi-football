@@ -13,7 +13,7 @@ import SaddamImg from "../assets/Saddam.jpeg";
 import AkashImg from "../assets/Akash.jpeg";
 import AdityaImg from "../assets/Aditya.jpeg";
 import HarshImg from "../assets/Harsh.png";
-import RohanImg from "../assets/Rohan.jpeg";
+import herobg from "../assets/acexi-bg.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -247,62 +247,16 @@ function useCountUp(target: number, active: boolean) {
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
-  const [tick, setTick] = useState(0);
-  const words = ["PRO.", "ACE.", "WIN."];
-  useEffect(() => {
-    const t = setInterval(() => setTick((c) => c + 1), 2200);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ background: "#0B0612", minHeight: "92vh" }}
+      className="relative w-full overflow-hidden"
+      style={{ height: "100vh" }}
     >
-      <div
-        className="hidden md:block absolute select-none pointer-events-none font-black"
-        style={{
-          right: "-2rem",
-          top: "10%",
-          fontSize: "32rem",
-          lineHeight: 1,
-          color: "rgba(75,31,167,0.18)",
-        }}
-      >
-        XI
-      </div>
-      <div
-        className="absolute hidden md:block"
-        style={{
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: "45%",
-          background: "linear-gradient(135deg, transparent 40%, #4B1FA7 40%, #4B1FA7 70%, #F5C842 70%)",
-          clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0% 100%)",
-          opacity: 0.85,
-        }}
+      <img
+        src={herobg}
+        alt="ACE XI Football Academy"
+        className="w-full h-full object-cover"
       />
-      <div
-        className="absolute md:hidden left-0 right-0 bottom-0 h-32"
-        style={{ background: "linear-gradient(135deg, #4B1FA7 0%, #F5C842 100%)" }}
-      />
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-16 md:pt-28 pb-32">
-        <h1 className="font-black text-white leading-[0.9] tracking-tight" style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
-          <div>TRAIN</div>
-          <div>LIKE A</div>
-          <div style={{ color: "#F5C842" }} key={tick}>{words[tick % words.length]}</div>
-        </h1>
-        <div className="mt-10">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[#0B0612]"
-            style={{ background: "#F5C842" }}
-          >
-            Join Now <ArrowUpRight size={18} />
-          </Link>
-        </div>
-      </div>
     </section>
   );
 }
@@ -343,9 +297,6 @@ function Programs() {
     <section className="py-24 px-5 md:px-8" style={{ background: "#fff" }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
-          <div className="text-xs font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
-            OUR CLIENTS
-          </div>
           <h2 className="font-black text-[#0B0612] leading-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
             Football by ACE XI
           </h2>

@@ -16,8 +16,13 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 backdrop-blur-md"
-      style={{ background: "rgba(11,6,18,0.85)", borderBottom: "1px solid rgba(245,200,66,0.15)" }}
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
+      style={{
+        background: "rgba(11, 6, 18, 0.35)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        backdropFilter: "blur(18px)",
+        WebkitBackdropFilter: "blur(18px)",
+      }}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
@@ -26,8 +31,8 @@ export default function Navbar() {
             alt="ACE Sports"
             className="w-10 h-10 object-contain"
           />
-          <span className={`font-heading font-bold text-xl `}>
-            ACE <span className="text-ace-gold">XI</span>
+          <span className="font-heading font-bold text-xl !text-white">
+            ACE <span className="!text-white">XI</span>
           </span>
         </Link>
 
