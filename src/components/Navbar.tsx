@@ -31,8 +31,8 @@ export default function Navbar() {
             alt="ACE Sports"
             className="w-10 h-10 object-contain"
           />
-          <span className="font-heading font-bold text-xl !text-white">
-            ACE <span className="!text-white">XI</span>
+          <span className={`font-heading font-bold text-xl text-white `}>
+            ACE <span className="text-ace-gold">XI</span>
           </span>
         </Link>
 
