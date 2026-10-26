@@ -8,9 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
             <Link to={"/" as any} className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-purple flex items-center justify-center">
-                <span className="font-heading font-black text-sm text-ace-gold">A</span>
-              </div>
+
               <span className="font-heading font-bold text-xl text-ace-surface">
                 ACE <span className="text-ace-gold">Sports</span>
               </span>
@@ -46,11 +44,21 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-ace-gold mb-4">Programs</h4>
             <ul className="space-y-2 text-ace-surface/60 text-sm">
-              {["Football", "Calisthenics", "Cricket", "Archery", "School Coaching", "College Coaching"].map((item) => (
+              {[
+                "Football",
+                "Calisthenics",
+                "Cricket",
+                "Archery",
+                "School Coaching",
+                "College Coaching",
+              ].map((item) => (
                 <li key={item}>
-                  <Link to={"/programs" as any} className="hover:text-ace-gold transition-colors">
+                  <a
+                    href="https://www.acexifc.com/"
+                    className="hover:text-ace-gold transition-colors"
+                  >
                     {item}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

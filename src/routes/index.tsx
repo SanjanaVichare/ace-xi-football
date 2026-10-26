@@ -27,6 +27,433 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+/*
+ACE XI CONTENT ADDITIONS
+Add this component to your existing index.tsx file, after the Hero component.
+Then render <BrandStorySections /> immediately after <Hero /> inside <main>.
+This uses the existing Tailwind setup and your current purple/gold brand palette.
+*/
+
+const CORE_VALUES = [
+  {
+    number: "01",
+    title: "Passion",
+    description:
+      "Football is at the heart of everything we do. Our passion drives us to inspire players, coaches, and communities every day.",
+  },
+  {
+    number: "02",
+    title: "Excellence",
+    description:
+      "We aim for high standards in coaching, player development, and every football experience we create.",
+  },
+  {
+    number: "03",
+    title: "Discipline",
+    description:
+      "Consistency, commitment, and hard work form the foundation of every successful player and team.",
+  },
+  {
+    number: "04",
+    title: "Teamwork",
+    description:
+      "Great achievements are built through trust, collaboration, and collective effort—on and off the pitch.",
+  },
+];
+
+const ACE_SERVICES = [
+  "Youth Football Training",
+  "Professional Football Coaching",
+  "School Football Programs",
+  "Grassroots Football Development",
+  "Elite Player Development",
+  "Goalkeeper Training",
+  "Player Performance Analysis",
+  "Coach Development Workshops",
+  "Football Leagues & Tournaments",
+  "Football Camps",
+  "Football Events & Festivals",
+];
+
+const WHO_WE_SERVE = [
+  "Young aspiring footballers",
+  "Beginner and intermediate players",
+  "Competitive athletes",
+  "Schools and educational institutions",
+  "Residential societies and township communities",
+  "Colleges and universities",
+  "Parents seeking structured sports development",
+  "Football enthusiasts and community groups",
+  "Corporate organizations",
+];
+
+const SCHOOL_PROGRAMS = [
+  "Weekly football coaching sessions",
+  "Curriculum-based football training",
+  "Inter-house and inter-school tournaments",
+  "Football camps and workshops",
+  "Physical education support",
+  "Talent identification programs",
+  "School football team development",
+  "Annual sports event management",
+];
+
+const SOCIETY_PROGRAMS = [
+  "Regular coaching sessions",
+  "Weekend football batches",
+  "Summer and holiday football camps",
+  "Mini tournaments and football festivals",
+  "Parent-child football activities",
+  "Fitness and recreational football sessions",
+];
+
+function BrandStorySections() {
+  return (
+    <>
+      {/* ABOUT / MISSION */}
+      <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#F5C842]">
+              More than a game
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-6xl">
+              We play.
+              <br />
+              We fight.
+              <br />
+              <span className="text-[#F5C842]">We ACE.</span>
+            </h2>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+              AceXI is a football organization committed to helping grow the
+              game in India. We believe football builds more than sporting
+              ability—it develops discipline, confidence, leadership, teamwork,
+              and character.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">
+              Through structured coaching, competitive opportunities, and
+              partnerships with schools, residential societies, parents, and
+              local communities, we aim to make football more accessible to
+              players of different ages and skill levels.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#F5C842]">
+              Our mission
+            </p>
+            <h3 className="mt-4 text-2xl font-black md:text-3xl">
+              Build better players. Build stronger communities.
+            </h3>
+            <ul className="mt-7 space-y-4">
+              {[
+                "Develop football talent through professional coaching.",
+                "Build a strong grassroots football culture.",
+                "Create structured pathways for player development.",
+                "Organize quality competitions and meaningful match experiences.",
+                "Partner with schools and communities to promote sport.",
+                "Inspire discipline, teamwork, leadership, and excellence.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-6 text-white/75">
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CORE VALUES */}
+      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-2xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+              What drives us
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
+              Our core values
+            </h2>
+            <p className="mt-4 leading-7 text-[#0B0612]/65">
+              The habits built on the pitch shape how we learn, compete, and
+              support one another beyond the game.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {CORE_VALUES.map((value) => (
+              <article
+                key={value.number}
+                className="rounded-2xl border border-[#0B0612]/10 bg-white p-6 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <p className="text-4xl font-black text-[#4B1FA7]/30">
+                  {value.number}
+                </p>
+                <h3 className="mt-5 text-2xl font-black text-[#0B0612]">
+                  {value.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#0B0612]/65">
+                  {value.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SCHOOL + SOCIETY PROGRAMS */}
+      <section className="bg-white px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+              Football for every community
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
+              Take the game beyond the pitch
+            </h2>
+            <p className="mt-4 leading-7 text-[#0B0612]/65">
+              We work with schools and residential communities to create
+              accessible, structured, and enjoyable football experiences for
+              children and young players.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <article className="rounded-3xl bg-[#F5F3EE] p-7 md:p-9">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4B1FA7]">
+                01 / Education
+              </p>
+              <h3 className="mt-3 text-2xl font-black text-[#0B0612] md:text-3xl">
+                School Football Development
+              </h3>
+              <p className="mt-3 leading-7 text-[#0B0612]/65">
+                Bring football into school life through coaching, competitions,
+                camps, and support for school teams.
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {SCHOOL_PROGRAMS.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-6 text-[#0B0612]/80">
+                    <span className="font-black text-[#4B1FA7]">+</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-3xl bg-[#0B0612] p-7 text-white md:p-9">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C842]">
+                02 / Community
+              </p>
+              <h3 className="mt-3 text-2xl font-black md:text-3xl">
+                Residential Society Football
+              </h3>
+              <p className="mt-3 leading-7 text-white/65">
+                Create safe, local opportunities for children to stay active,
+                build friendships, and discover a lasting love for football.
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {SOCIETY_PROGRAMS.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-6 text-white/80">
+                    <span className="font-black text-[#F5C842]">+</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* CLUB + COMPETITION */}
+      <section className="bg-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+              Learn together. Compete together.
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
+              Football club
+              <br />
+              & competitions
+            </h2>
+            <p className="mt-5 max-w-xl leading-8 text-white/80">
+              Football teaches that no one wins alone. AceXI creates
+              opportunities for aspiring players to compete through organized
+              teams, leagues, and tournaments while developing discipline,
+              teamwork, and a mindset of continuous improvement.
+            </p>
+            <p className="mt-4 max-w-xl leading-8 text-white/80">
+              Our competitions are designed to provide valuable match
+              experience, encourage sportsmanship, and bring the football
+              community together.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              ["01", "League matches"],
+              ["02", "Youth tournaments"],
+              ["03", "Football camps"],
+              ["04", "Community festivals"],
+            ].map(([number, label]) => (
+              <div
+                key={number}
+                className="min-h-36 rounded-2xl border border-white/20 bg-white/[0.08] p-5"
+              >
+                <p className="text-3xl font-black text-[#F5C842]">{number}</p>
+                <p className="mt-5 font-bold">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="bg-white px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+              What we do
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
+              One game.
+              <br />
+              Many pathways.
+            </h2>
+            <p className="mt-5 max-w-md leading-7 text-[#0B0612]/65">
+              From first-time players to competitive athletes, our programs
+              support learning, practice, performance, and participation.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {ACE_SERVICES.map((service, index) => (
+              <div
+                key={service}
+                className="flex items-center gap-4 rounded-xl border border-[#0B0612]/10 p-4"
+              >
+                <span className="text-sm font-black text-[#4B1FA7]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm font-semibold text-[#0B0612]">
+                  {service}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+            A place for every player
+          </p>
+          <h2 className="max-w-3xl text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
+            Who we serve
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-[#0B0612]/65">
+            AceXI connects individuals and organizations that want to learn,
+            play, compete, and help football grow.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            {WHO_WE_SERVE.map((audience) => (
+              <span
+                key={audience}
+                className="rounded-full border border-[#0B0612]/15 bg-white px-4 py-3 text-sm font-semibold text-[#0B0612]"
+              >
+                {audience}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LESSONS + COMMUNITY */}
+      <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+              Lessons beyond the game
+            </p>
+            <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
+              Character is built
+              <br />
+              one match at a time.
+            </h2>
+            <p className="mt-5 leading-8 text-white/65">
+              Football teaches players to follow rules, respect opponents,
+              respond to setbacks, and handle success with humility. These
+              lessons extend beyond the pitch, helping shape stronger
+              individuals and communities.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {["Discipline", "Respect", "Resilience", "Leadership", "Teamwork"].map(
+                (value) => (
+                  <span
+                    key={value}
+                    className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-[#F5C842]"
+                  >
+                    {value}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+              Moments that define us
+            </p>
+            <h3 className="mt-4 text-2xl font-black md:text-3xl">
+              A heroic save. A missed penalty. A last-minute goal.
+            </h3>
+            <p className="mt-5 leading-8 text-white/65">
+              Football is full of moments that stay with us. They build
+              confidence, character, and resilience. Win or lose, every match
+              leaves a mark—and every new player, fan, and generation adds to
+              the story.
+            </p>
+            <p className="mt-5 text-lg font-bold text-[#F5C842]">
+              The story never ends.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CLOSING CTA */}
+      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-5xl rounded-3xl bg-[#F5C842] px-7 py-12 text-center md:px-14 md:py-16">
+          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#4B1FA7]">
+            The next chapter starts here
+          </p>
+          <h2 className="mt-4 text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-6xl">
+            Together, let’s shape the future of football.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#0B0612]/75">
+            Every dream begins with a single kick. Join AceXI in inspiring,
+            developing, and empowering the next generation of footballers and
+            building a stronger football culture across India.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="tel:9082780734"
+              className="inline-flex items-center justify-center rounded-full bg-[#0B0612] px-7 py-4 font-bold text-white transition-transform hover:-translate-y-1"
+            >
+              Call AceXI · 9082780734
+            </a>
+            <a
+              href="https://www.acexifc.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-[#0B0612]/25 px-7 py-4 font-bold text-[#0B0612] transition-colors hover:bg-white/50"
+            >
+              Visit AceXI
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 // ─── 3D LOADER ────────────────────────────────────────────────────────────────
 function Football() {
   const { scene } = useGLTF("/models/football.glb");
@@ -382,7 +809,7 @@ const COACHES = [
     badge: "Head Coach",
     name: "Saddam Shaikh",
     role: "Head Coach",
-    bio: "Leads ACE XI's overall philosophy, tactics, and player development. With over a decade of coaching experience, Saddam brings structure, discipline, and passion to every session — shaping players from the ground up.",
+    bio: "Leads ACE XI's overall philosophy, tactics, and player development. With over a decade of coaching experience, Saddam brings structure, discipline, and passion.",
     accentColor: "#4B1FA7",
     imagePath: SaddamImg,
   },
@@ -556,111 +983,106 @@ function Team() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setCoachInView(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setCoachInView(true);
+      },
       { threshold: 0.05 }
     );
+
     if (coachRef.current) observer.observe(coachRef.current);
+
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setContentInView(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setContentInView(true);
+      },
       { threshold: 0.05 }
     );
+
     if (contentRef.current) observer.observe(contentRef.current);
+
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setFounderInView(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setFounderInView(true);
+      },
       { threshold: 0.05 }
     );
+
     if (founderRef.current) observer.observe(founderRef.current);
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <>
-      {/* ── COACHES GRID ── */}
-      <section
-        className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16"
-        style={{ background: "#F5F4FF" }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 lg:mb-14">
-            <p
-              className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
-              style={{ color: "#4B1FA7" }}
-            >
-              The people on the pitch
-            </p>
-            <h2
-              className="font-black uppercase leading-[0.88]"
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(2.8rem, 8vw, 5rem)",
-                color: "#0B0612",
-              }}
-            >
-              Our <span style={{ color: "#4B1FA7" }}>Coaches</span>
-            </h2>
-          </div>
-          <div
-            ref={coachRef}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+    <section
+      className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-8"
+      style={{ background: "#F5F4FF" }}
+    >
+      <div className="max-w-7xl mx-auto">
+
+        {/* SECTION HEADING */}
+        <div className="text-center mb-10 lg:mb-14">
+          <p
+            className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
+            style={{ color: "#4B1FA7" }}
           >
-            {COACHES.map((coach, i) => (
+            The people behind ACE XI
+          </p>
+
+          <h2
+            className="font-black uppercase leading-[0.88]"
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(2.8rem, 8vw, 5rem)",
+              color: "#0B0612",
+            }}
+          >
+            Meet Our{" "}
+            <span style={{ color: "#4B1FA7" }}>Team</span>
+          </h2>
+        </div>
+
+        {/* ALL FOUR TEAM MEMBERS IN ONE ROW */}
+        <div
+          ref={coachRef}
+          className="grid grid-cols-4 gap-3 lg:gap-5"
+        >
+          {/* THREE COACHES */}
+          {COACHES.slice(0, 3).map((coach, i) => (
+            <div key={coach.abbr} className="min-w-0">
               <CoachCard
-                key={coach.abbr}
                 coach={coach}
                 inView={coachInView}
                 delay={i * 120}
               />
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+          ))}
 
-      {/* ── CONTENT LEAD ── */}
-      <section
-        className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-16"
-        style={{ background: "#fff" }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 lg:mb-14">
-            <p
-              className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
-              style={{ color: "#4B1FA7" }}
-            >
-              Behind the lens
-            </p>
-            <h2
-              className="font-black uppercase leading-[0.88]"
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(2.8rem, 8vw, 5rem)",
-                color: "#0B0612",
-              }}
-            >
-              Our <span style={{ color: "#4B1FA7" }}>Content Lead</span>
-            </h2>
-          </div>
-          <div className="max-w-sm mx-auto" ref={contentRef}>
+          {/* CONTENT LEAD */}
+          <div className="min-w-0" ref={contentRef}>
             <div
-              className="rounded-2xl overflow-hidden flex flex-col relative"
+              className="rounded-2xl overflow-hidden flex flex-col relative h-full"
               style={{
                 background: "#1A1A2E",
                 minHeight: "clamp(320px, 44vw, 480px)",
                 opacity: contentInView ? 1 : 0,
                 transform: contentInView
-                  ? contentActive ? "scale(0.965) translateY(3px)" : "scale(1) translateY(0)"
+                  ? contentActive
+                    ? "scale(0.965) translateY(3px)"
+                    : "scale(1) translateY(0)"
                   : "translateY(48px) scale(0.97)",
-                transition: contentInView
-                  ? "transform 0.32s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.32s ease, opacity 0.7s ease 0ms"
-                  : "opacity 0.7s ease 0ms, transform 0.7s ease 0ms",
-                boxShadow: contentActive ? "0 2px 10px rgba(0,0,0,0.18)" : "0 6px 24px rgba(0,0,0,0.09)",
+                transition:
+                  "transform 0.32s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.32s ease, opacity 0.7s ease",
+                boxShadow: contentActive
+                  ? "0 2px 10px rgba(0,0,0,0.18)"
+                  : "0 6px 24px rgba(0,0,0,0.09)",
                 cursor: "default",
                 WebkitTapHighlightColor: "transparent",
                 userSelect: "none",
@@ -669,15 +1091,26 @@ function Team() {
               onMouseEnter={() => setContentActive(true)}
               onMouseLeave={() => setContentActive(false)}
             >
+              {/* HOVER OVERLAY */}
               <div
                 className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
-                  background: contentActive ? "rgba(255,255,255,0.06)" : "transparent",
+                  background: contentActive
+                    ? "rgba(255,255,255,0.06)"
+                    : "transparent",
                   transition: "background 0.2s ease",
                   zIndex: 2,
                 }}
               />
-              <div style={{ position: "relative", height: "clamp(260px, 32vw, 340px)", flexShrink: 0 }}>
+
+              {/* IMAGE */}
+              <div
+                style={{
+                  position: "relative",
+                  height: "clamp(180px, 32vw, 340px)",
+                  flexShrink: 0,
+                }}
+              >
                 <img
                   src={AdityaImg}
                   alt="Aditya Dhurat"
@@ -691,26 +1124,31 @@ function Team() {
                     transform: contentActive ? "scale(1.04)" : "scale(1)",
                   }}
                 />
+
+                {/* IMAGE GRADIENT */}
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: "linear-gradient(to bottom, transparent 50%, #1A1A2E 100%)",
+                    background:
+                      "linear-gradient(to bottom, transparent 50%, #1A1A2E 100%)",
                     pointerEvents: "none",
                     opacity: contentActive ? 0.45 : 0,
                     transition: "opacity 0.35s ease",
                   }}
                 />
+
+                {/* ROLE BADGE */}
                 <span
                   style={{
                     position: "absolute",
-                    top: 14,
-                    right: 14,
+                    top: 10,
+                    right: 10,
                     fontSize: 9,
                     fontWeight: 700,
-                    letterSpacing: "0.16em",
+                    letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    padding: "4px 10px",
+                    padding: "4px 8px",
                     borderRadius: 999,
                     background: "rgba(245,200,66,0.15)",
                     color: "#F5C842",
@@ -721,12 +1159,14 @@ function Team() {
                   Content
                 </span>
               </div>
-              <div className="relative p-6 lg:p-8 flex flex-col flex-1">
+
+              {/* CONTENT */}
+              <div className="relative p-3 sm:p-4 lg:p-6 flex flex-col flex-1">
                 <p
                   style={{
                     fontSize: 9,
                     fontWeight: 700,
-                    letterSpacing: "0.16em",
+                    letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "#F5C842",
                     marginBottom: 6,
@@ -734,47 +1174,54 @@ function Team() {
                 >
                   Content Lead
                 </p>
+
                 <h3
                   style={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "clamp(1.75rem, 5vw, 2.6rem)",
+                    fontSize: "clamp(1.2rem, 2.2vw, 2.6rem)",
                     color: "#fff",
                     letterSpacing: contentActive ? "0.025em" : "0em",
-                    lineHeight: 0.9,
+                    lineHeight: 0.95,
                     textTransform: "uppercase",
                     transition: "letter-spacing 0.3s ease",
                     marginBottom: 10,
                     fontWeight: 900,
+                    overflowWrap: "break-word",
                   }}
                 >
                   Aditya Dhurat
                 </h3>
+
                 <div
                   style={{
                     height: "1.5px",
                     marginBottom: 12,
                     background: "rgba(255,255,255,0.22)",
                     width: contentActive ? "100%" : "36%",
-                    transition: "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
+                    transition:
+                      "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
                   }}
                 />
+
                 <p
                   style={{
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: 300,
                     lineHeight: 1.65,
                     flex: 1,
                     color: "rgba(255,255,255,0.65)",
                   }}
                 >
-                  The eye behind every frame. Aditya captures the energy, grit, and heart of ACE XI — turning every session and match into a story worth telling.
+                  The eye behind every frame. Aditya captures the energy,
+                  grit, and heart of ACE XI — turning every session and match
+                  into a story worth telling.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
@@ -1126,6 +1573,7 @@ function Index() {
         <Team />
         <Events />
         <Achievements />
+        <BrandStorySections />
         <WhyACE />
       </main>
       <Footer />
