@@ -116,91 +116,181 @@ const SOCIETY_PROGRAMS = [
 ];
 
 function BrandStorySections() {
+  const programs = [
+    {
+      number: "01",
+      label: "EDUCATION",
+      title: "School Football Development",
+      description:
+        "Bring football into school life through coaching, competitions, camps, and support for school teams.",
+      items: SCHOOL_PROGRAMS,
+      dark: false,
+    },
+    {
+      number: "02",
+      label: "COMMUNITY",
+      title: "Residential Society Football",
+      description:
+        "Create safe, local opportunities for children to stay active, build friendships, and discover a lasting love for football.",
+      items: SOCIETY_PROGRAMS,
+      dark: true,
+    },
+  ];
+
+  const competitions = [
+    "League matches",
+    "Youth tournaments",
+    "Football camps",
+    "Community festivals",
+  ];
+
+  const lessons = [
+    "Discipline",
+    "Respect",
+    "Resilience",
+    "Leadership",
+    "Teamwork",
+  ];
+
   return (
     <>
       {/* ABOUT / MISSION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+      <section className="relative isolate overflow-hidden bg-[#241044] px-5 py-14 text-white md:px-8 md:py-20">
+        <div className="pointer-events-none absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#6D35C8]/30 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-40 -left-20 h-[300px] w-[300px] rounded-full bg-[#F5C842]/10 blur-[100px]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="mb-4 text-s font-bold uppercase tracking-[0.28em] text-[#F5C842]">
+            <p className="mb-4 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+              <span className="h-[2px] w-10 bg-[#F5C842]" />
               More than a game
             </p>
-            <h2 className="text-5xl font-black uppercase leading-[0.95] md:text-7xl">
+
+            <h2
+              className="text-6xl font-black uppercase leading-[0.88] tracking-tight sm:text-7xl md:text-8xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
               We play.
               <br />
               We fight.
               <br />
               <span className="text-[#F5C842]">We ACE.</span>
             </h2>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/65 md:text-lg">
               AceXI is a football organization committed to helping grow the
               game in India. We believe football builds more than sporting
-              ability—it develops discipline, confidence, leadership, teamwork,
-              and character.
+              ability — it develops discipline, confidence, leadership,
+              teamwork, and character.
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/70">
+
+            <p className="mt-3 max-w-xl text-sm leading-7 text-white/50 md:text-base">
               Through structured coaching, competitive opportunities, and
               partnerships with schools, residential societies, parents, and
               local communities, we aim to make football more accessible to
               players of different ages and skill levels.
             </p>
+
+            <div className="mt-6 flex items-center gap-4">
+              <span className="h-10 w-1 bg-[#F5C842]" />
+              <p className="text-sm font-bold uppercase tracking-widest text-white/80">
+                Passion. Purpose. Performance.
+              </p>
+            </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.16] via-[#8B5CF6]/[0.16] to-[#F5C842]/[0.10] p-7 shadow-[0_8px_40px_rgba(139,92,246,0.22)] backdrop-blur-2xl transition-all duration-500 hover:border-[#F5C842]/40 hover:shadow-[0_12px_55px_rgba(139,92,246,0.35)] md:p-10">
-            <p className="text-s font-bold uppercase tracking-[0.24em] text-[#F5C842]">
-              Our mission
-            </p>
-            <h3 className="mt-4 text-3xl font-black leading-tight md:text-4xl">
-              Build better players. Build stronger communities.
-            </h3>
-            <ul className="mt-7 space-y-4">
-              {[
-                "Develop football talent through professional coaching.",
-                "Build a strong grassroots football culture.",
-                "Create structured pathways for player development.",
-                "Organize quality competitions and meaningful match experiences.",
-                "Partner with schools and communities to promote sport.",
-                "Inspire discipline, teamwork, leadership, and excellence.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-6 text-white/75">
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="relative">
+            <div className="absolute -inset-2 rotate-3 rounded-[2rem] border border-[#F5C842]/20" />
+
+            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-gradient-to-br from-[#6D35C8]/70 via-[#351568] to-[#241044] p-7 shadow-[0_25px_80px_rgba(75,31,167,0.3)] md:p-8">
+              <div className="absolute -right-10 -top-10 text-[150px] font-black leading-none text-white/[0.035]">
+                XI
+              </div>
+
+              <p className="relative text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+                Our mission
+              </p>
+
+              <h3 className="relative mt-4 text-3xl font-black uppercase leading-tight md:text-4xl">
+                Build better players.
+                <br />
+                <span className="text-[#F5C842]">
+                  Build stronger communities.
+                </span>
+              </h3>
+
+              <div className="my-5 h-px bg-white/15" />
+
+              <ul className="relative space-y-3">
+                {[
+                  "Develop football talent through professional coaching.",
+                  "Build a strong grassroots football culture.",
+                  "Create structured pathways for player development.",
+                  "Organize quality competitions and meaningful match experiences.",
+                  "Partner with schools and communities to promote sport.",
+                  "Inspire discipline, teamwork, leadership, and excellence.",
+                ].map((item, index) => (
+                  <li key={item} className="flex items-start gap-4">
+                    <span className="mt-0.5 text-sm font-black text-[#F5C842]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-sm leading-6 text-white/75">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-[#F5F3EE] px-5 py-14 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
-              What drives us
-            </p>
-            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
-              Our core values
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-[#0B0612]/75 md:text-xl lg:whitespace-nowrap">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#6D35C8]">
+                What drives us
+              </p>
+
+              <h2
+                className="text-5xl font-black uppercase leading-none text-[#241044] md:text-7xl"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                Our core values<span className="text-[#6D35C8]">.</span>
+              </h2>
+            </div>
+
+            <p className="max-w-md text-sm leading-7 text-[#241044]/60 md:text-base">
               The habits built on the pitch shape how we learn, compete, and
               support one another beyond the game.
             </p>
           </div>
+
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {CORE_VALUES.map((value) => (
+            {CORE_VALUES.map((value, index) => (
               <article
                 key={value.number}
-                className="rounded-2xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-6 shadow-[0_8px_30px_rgba(75,31,167,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#4B1FA7]/30 hover:shadow-[0_15px_35px_rgba(75,31,167,0.16)]"
+                className="group relative min-h-[220px] overflow-hidden rounded-2xl border border-[#6D35C8]/10 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-[#6D35C8]/30 hover:bg-[#351568] hover:shadow-[0_20px_45px_rgba(75,31,167,0.18)]"
               >
-                <p className="text-4xl font-black text-[#4B1FA7]/30">
+                <span className="absolute -right-3 -top-8 text-8xl font-black text-[#6D35C8]/[0.06] transition-colors duration-500 group-hover:text-white/[0.06]">
                   {value.number}
-                </p>
-                <h3 className="mt-5 text-2xl font-black text-[#0B0612]">
+                </span>
+
+                <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-[#6D35C8]/10 text-lg font-black text-[#6D35C8] transition-all duration-500 group-hover:bg-[#F5C842] group-hover:text-[#241044]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <h3 className="relative mt-6 text-2xl font-black uppercase text-[#241044] transition-colors duration-500 group-hover:text-white">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[#0B0612]/65">
+
+                <p className="relative mt-3 text-sm leading-6 text-[#241044]/60 transition-colors duration-500 group-hover:text-white/60">
                   {value.description}
                 </p>
+
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#F5C842] transition-all duration-500 group-hover:w-full" />
               </article>
             ))}
           </div>
@@ -208,248 +298,314 @@ function BrandStorySections() {
       </section>
 
       {/* SCHOOL + SOCIETY PROGRAMS */}
-      <section className="bg-gradient-to-br from-white via-[#F5F3EE] to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-white px-5 py-14 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+          <div className="mb-8 max-w-2xl">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#6D35C8]">
               Football for every community
             </p>
-            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
-              Take the game beyond the pitch
+
+            <h2
+              className="text-5xl font-black uppercase leading-[0.95] text-[#241044] md:text-7xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
+              Take the game
+              <br />
+              <span className="text-[#6D35C8]">beyond the pitch.</span>
             </h2>
-            <p className="mt-4 leading-7 text-[#0B0612]/65">
+
+            <p className="mt-4 max-w-xl leading-7 text-[#241044]/60">
               We work with schools and residential communities to create
               accessible, structured, and enjoyable football experiences for
               children and young players.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            <article className="rounded-3xl bg-[#F5F3EE] p-7 md:p-9">
-              <p className="text-s font-bold uppercase tracking-[0.2em] text-[#4B1FA7]">
-                01 / Education
-              </p>
-              <h3 className="mt-3 text-2xl font-black text-[#0B0612] md:text-3xl">
-                School Football Development
-              </h3>
-              <p className="mt-3 leading-7 text-[#0B0612]/65">
-                Bring football into school life through coaching, competitions,
-                camps, and support for school teams.
-              </p>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {SCHOOL_PROGRAMS.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm leading-6 text-[#0B0612]/80">
-                    <span className="font-black text-[#4B1FA7]">+</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
+          <div className="grid gap-5 lg:grid-cols-2">
+            {programs.map((program) => (
+              <article
+                key={program.number}
+                className={`group relative overflow-hidden rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1 md:p-8 ${program.dark
+                  ? "bg-[#351568] text-white hover:shadow-[0_25px_55px_rgba(75,31,167,0.25)]"
+                  : "border border-[#6D35C8]/10 bg-[#F5F3EE] text-[#241044] hover:shadow-[0_25px_55px_rgba(75,31,167,0.12)]"
+                  }`}
+              >
+                <div className="absolute -right-8 -top-12 text-[150px] font-black leading-none opacity-[0.04]">
+                  {program.number}
+                </div>
 
-            <article className="rounded-3xl bg-[#0B0612] p-7 text-white md:p-9">
-              <p className="text-s font-bold uppercase tracking-[0.2em] text-[#F5C842]">
-                02 / Community
-              </p>
-              <h3 className="mt-3 text-2xl font-black md:text-3xl">
-                Residential Society Football
-              </h3>
-              <p className="mt-3 leading-7 text-white/65">
-                Create safe, local opportunities for children to stay active,
-                build friendships, and discover a lasting love for football.
-              </p>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {SOCIETY_PROGRAMS.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm leading-6 text-white/80">
-                    <span className="font-black text-[#F5C842]">+</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </article>
+                <p
+                  className={`relative text-xs font-black uppercase tracking-[0.25em] ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
+                    }`}
+                >
+                  {program.number} / {program.label}
+                </p>
+
+                <h3 className="relative mt-5 max-w-md text-3xl font-black uppercase leading-tight md:text-4xl">
+                  {program.title}
+                </h3>
+
+                <p
+                  className={`relative mt-3 max-w-lg text-sm leading-7 ${program.dark ? "text-white/55" : "text-[#241044]/60"
+                    }`}
+                >
+                  {program.description}
+                </p>
+
+                <div
+                  className={`relative my-5 h-px ${program.dark ? "bg-white/15" : "bg-[#241044]/10"
+                    }`}
+                />
+
+                <ul className="relative grid gap-3 sm:grid-cols-2">
+                  {program.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm">
+                      <span
+                        className={`font-black ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
+                          }`}
+                      >
+                        +
+                      </span>
+                      <span
+                        className={
+                          program.dark ? "text-white/75" : "text-[#241044]/75"
+                        }
+                      >
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CLUB + COMPETITION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-24 text-white md:px-8 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
+      {/* CLUB + COMPETITIONS */}
+      <section className="relative overflow-hidden bg-[#241044] px-5 py-14 text-white md:px-8 md:py-16">
+        <div className="pointer-events-none absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#6D35C8]/30 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
-              ACE XI FOOTBALL CLUB
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+              ACE XI Football Club
             </p>
-            <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
-              Football club
+
+            <h2
+              className="text-5xl font-black uppercase leading-[0.9] md:text-7xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
+              Built to compete.
               <br />
-              & competitions
+              <span className="text-[#F5C842]">Driven to win.</span>
             </h2>
-            <p className="mt-5 max-w-xl leading-8 text-white/80">
+
+            <p className="mt-6 max-w-xl leading-7 text-white/60">
               Football teaches that no one wins alone. AceXI creates
               opportunities for aspiring players to compete through organized
               teams, leagues, and tournaments while developing discipline,
               teamwork, and a mindset of continuous improvement.
             </p>
-            <p className="mt-4 max-w-xl leading-8 text-white/80">
+
+            <p className="mt-3 max-w-xl leading-7 text-white/50">
               Our competitions are designed to provide valuable match
               experience, encourage sportsmanship, and bring the football
               community together.
             </p>
           </div>
+
           <div className="grid grid-cols-2 gap-3">
-            {[
-              ["01", "League matches"],
-              ["02", "Youth tournaments"],
-              ["03", "Football camps"],
-              ["04", "Community festivals"],
-            ].map(([number, label]) => (
+            {competitions.map((item, index) => (
               <div
-                key={number}
-                className="min-h-36 rounded-2xl border border-white/20 bg-gradient-to-br from-white/[0.18] via-[#8B5CF6]/[0.14] to-[#F5C842]/[0.08] p-5 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#F5C842]/50"
+                key={item}
+                className="group flex min-h-36 flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-[#6D35C8]/[0.18] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30"
               >
-                <p className="text-3xl font-black text-[#F5C842]">{number}</p>
-                <p className="mt-5 font-bold">{label}</p>
+                <span className="text-3xl font-black text-[#F5C842]/50 transition-colors group-hover:text-[#F5C842]">
+                  0{index + 1}
+                </span>
+
+                <p className="text-sm font-black uppercase leading-snug">
+                  {item}
+                </p>
+
+                <div className="mt-3 h-1 w-8 bg-[#F5C842] transition-all duration-300 group-hover:w-full" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="bg-gradient-to-br from-white via-[#F5F3EE] to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
-              What we do
-            </p>
-            <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
-              One game.
-              <br />
-              Many pathways.
-            </h2>
-            <p className="mt-5 max-w-md leading-7 text-[#0B0612]/65">
-              From first-time players to competitive athletes, our programs
-              support learning, practice, performance, and participation.
-            </p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {ACE_SERVICES.map((service, index) => (
-              <div
-                key={service}
-                className="flex items-center gap-4 rounded-xl border border-[#0B0612]/10 p-4"
-              >
-                <span className="text-sm font-black text-[#4B1FA7]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm font-semibold text-[#0B0612]">
-                  {service}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SERVICES + WHO WE SERVE */}
+      <section className="relative overflow-hidden bg-[#F5F3EE] px-5 py-12 md:px-8 md:py-16">
+        <div className="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-[#6D35C8]/10 blur-[100px]" />
 
-      {/* WHO WE SERVE */}
-      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
-            A place for every player
-          </p>
-          <h2 className="max-w-3xl text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
-            Who we serve
-          </h2>
-          <p className="mt-4 max-w-2xl leading-7 text-[#0B0612]/65">
-            AceXI connects individuals and organizations that want to learn,
-            play, compete, and help football grow.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            {WHO_WE_SERVE.map((audience) => (
-              <span
-                key={audience}
-                className="rounded-full border border-[#0B0612]/15 bg-white px-4 py-3 text-sm font-semibold text-[#0B0612]"
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-2">
+
+            {/* SERVICES - LEFT */}
+            <div className="rounded-3xl bg-[#241044] p-6 text-white md:p-8">
+              <p className="mb-3 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-[#F5C842]">
+                <span className="h-[2px] w-7 bg-[#F5C842]" />
+                What we do
+              </p>
+
+              <h2
+                className="text-5xl font-black uppercase leading-[0.88] md:text-6xl"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                {audience}
-              </span>
-            ))}
+                One game.
+                <br />
+                <span className="text-[#F5C842]">Endless possibilities.</span>
+              </h2>
+
+              <p className="mt-4 max-w-md text-sm leading-6 text-white/60">
+                From the first kick to competitive football, we create
+                opportunities for players to learn, grow, train, and achieve
+                their potential.
+              </p>
+
+              <div className="mt-7 grid gap-2 sm:grid-cols-2">
+                {ACE_SERVICES.map((service, index) => (
+                  <article
+                    key={service}
+                    className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-3 transition-all duration-300 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#F5C842]/10 text-xs font-black text-[#F5C842] transition-colors group-hover:bg-[#F5C842] group-hover:text-[#241044]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="text-xs font-bold uppercase leading-snug text-white/85 transition-colors group-hover:text-[#F5C842]">
+                      {service}
+                    </span>
+
+                    <span className="ml-auto text-sm text-white/30 transition-all group-hover:translate-x-1 group-hover:text-[#F5C842]">
+                      ↗
+                    </span>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {/* WHO WE SERVE - RIGHT */}
+            <div className="rounded-3xl border border-[#6D35C8]/10 bg-white p-6 md:p-8">
+              <p className="mb-3 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-[#6D35C8]">
+                <span className="h-[2px] w-7 bg-[#6D35C8]" />
+                Who we serve
+              </p>
+
+              <h2
+                className="text-5xl font-black uppercase leading-[0.88] text-[#241044] md:text-6xl"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                The game is
+                <br />
+                <span className="text-[#6D35C8]">for everyone.</span>
+              </h2>
+
+              <p className="mt-4 max-w-md text-sm leading-6 text-[#241044]/60">
+                Whether you're a player, parent, school, or organization,
+                there's a place for you at AceXI.
+              </p>
+
+              <div className="mt-7 grid grid-cols-2 gap-2">
+                {WHO_WE_SERVE.map((audience, index) => (
+                  <article
+                    key={audience}
+                    className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-[#6D35C8]/10 bg-[#F5F3EE] p-3 transition-all duration-300 hover:border-[#6D35C8]/40 hover:bg-[#351568]"
+                  >
+                    <span className="text-lg font-black text-[#6D35C8]/50 transition-colors group-hover:text-[#F5C842]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="text-xs font-bold uppercase leading-snug text-[#241044] transition-colors group-hover:text-white">
+                      {audience}
+                    </span>
+
+                    <span className="ml-auto text-sm text-[#6D35C8]/40 transition-colors group-hover:text-[#F5C842]">
+                      ↗
+                    </span>
+                  </article>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* LESSONS + COMMUNITY */}
-      <section className="bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#241044] via-[#351568] to-[#6D35C8] px-5 py-14 text-white md:px-8 md:py-16">
+        <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#F5C842]/10 blur-[100px]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
               Lessons beyond the game
             </p>
-            <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
+
+            <h2
+              className="text-5xl font-black uppercase leading-[0.92] md:text-7xl"
+              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            >
               Character is built
               <br />
-              one match at a time.
+              <span className="text-[#F5C842]">one match at a time.</span>
             </h2>
-            <p className="mt-5 leading-8 text-white/65">
+
+            <p className="mt-6 max-w-xl leading-7 text-white/60">
               Football teaches players to follow rules, respect opponents,
               respond to setbacks, and handle success with humility. These
               lessons extend beyond the pitch, helping shape stronger
               individuals and communities.
             </p>
-            <div className="mt-7 flex flex-wrap gap-2">
-              {["Discipline", "Respect", "Resilience", "Leadership", "Teamwork"].map(
-                (value) => (
-                  <span
-                    key={value}
-                    className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-[#F5C842]"
-                  >
-                    {value}
-                  </span>
-                ),
-              )}
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {lessons.map((value) => (
+                <span
+                  key={value}
+                  className="rounded-full border border-[#F5C842]/25 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#F5C842]"
+                >
+                  {value}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.16] via-[#8B5CF6]/[0.14] to-[#F5C842]/[0.08] p-7 shadow-[0_12px_45px_rgba(139,92,246,0.20)] backdrop-blur-2xl md:p-9">
-            <p className="text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+          <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.07] p-7 backdrop-blur-xl md:p-8">
+            <div className="absolute -right-4 -top-8 text-[130px] font-black leading-none text-white/[0.04]">
+              XI
+            </div>
+
+            <p className="relative text-xs font-black uppercase tracking-[0.25em] text-[#F5C842]">
               Moments that define us
             </p>
-            <h3 className="mt-4 text-2xl font-black md:text-3xl">
-              A heroic save. A missed penalty. A last-minute goal.
+
+            <h3 className="relative mt-5 text-3xl font-black uppercase leading-tight md:text-4xl">
+              A heroic save.
+              <br />
+              A missed penalty.
+              <br />
+              <span className="text-[#F5C842]">A last-minute goal.</span>
             </h3>
-            <p className="mt-5 leading-8 text-white/65">
+
+            <p className="relative mt-5 leading-7 text-white/55">
               Football is full of moments that stay with us. They build
               confidence, character, and resilience. Win or lose, every match
-              leaves a mark—and every new player, fan, and generation adds to
+              leaves a mark — and every new player, fan, and generation adds to
               the story.
             </p>
-            <p className="mt-5 text-lg font-bold text-[#F5C842]">
-              The story never ends.
-            </p>
+
+            <div className="relative mt-6 border-t border-white/15 pt-5">
+              <p className="text-lg font-black uppercase tracking-wide text-[#F5C842]">
+                The story never ends.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CLOSING CTA */}
-      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-white/40 bg-gradient-to-br from-[#F5C842] via-[#FFD966] to-[#FFF0B3] px-7 py-12 text-center shadow-[0_18px_55px_rgba(75,31,167,0.16)] md:px-14 md:py-16">
-          <p className="text-s font-black uppercase tracking-[0.25em] text-[#4B1FA7]">
-            The next chapter starts here
-          </p>
-          <h2 className="mt-4 text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-6xl">
-            Together, let’s shape the future of football.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-[#0B0612]/75">
-            Every dream begins with a single kick. Join AceXI in inspiring,
-            developing, and empowering the next generation of footballers and
-            building a stronger football culture across India.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="tel:9082780734"
-              className="inline-flex items-center justify-center rounded-full bg-[#0B0612] px-7 py-4 font-bold text-white transition-transform hover:-translate-y-1"
-            >
-              Call ACE XI
-            </a>
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }
