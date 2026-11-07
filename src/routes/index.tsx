@@ -34,6 +34,14 @@ Then render <BrandStorySections /> immediately after <Hero /> inside <main>.
 This uses the existing Tailwind setup and your current purple/gold brand palette.
 */
 
+const gradients = {
+  dark: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)",
+  light: "linear-gradient(135deg, #F5F3EE 0%, #FFFFFF 55%, #EEE8FA 100%)",
+  gold: "linear-gradient(135deg, #F5C842 0%, #FFD966 55%, #FFF0B3 100%)",
+  purple: "linear-gradient(135deg, #4B1FA7 0%, #713BD1 55%, #A77BEB 100%)",
+  card: "linear-gradient(145deg, rgba(75,31,167,0.12), rgba(245,200,66,0.10))",
+};
+
 const CORE_VALUES = [
   {
     number: "01",
@@ -114,7 +122,7 @@ function BrandStorySections() {
       <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[#F5C842]">
+            <p className="mb-4 text-s font-bold uppercase tracking-[0.28em] text-[#F5C842]">
               More than a game
             </p>
             <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-6xl">
@@ -139,7 +147,7 @@ function BrandStorySections() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-10">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#F5C842]">
+            <p className="text-s font-bold uppercase tracking-[0.24em] text-[#F5C842]">
               Our mission
             </p>
             <h3 className="mt-4 text-2xl font-black md:text-3xl">
@@ -167,7 +175,7 @@ function BrandStorySections() {
       <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-2xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
               What drives us
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
@@ -203,7 +211,7 @@ function BrandStorySections() {
       <section className="bg-white px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-3xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
               Football for every community
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
@@ -218,7 +226,7 @@ function BrandStorySections() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             <article className="rounded-3xl bg-[#F5F3EE] p-7 md:p-9">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#4B1FA7]">
+              <p className="text-s font-bold uppercase tracking-[0.2em] text-[#4B1FA7]">
                 01 / Education
               </p>
               <h3 className="mt-3 text-2xl font-black text-[#0B0612] md:text-3xl">
@@ -239,7 +247,7 @@ function BrandStorySections() {
             </article>
 
             <article className="rounded-3xl bg-[#0B0612] p-7 text-white md:p-9">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C842]">
+              <p className="text-s font-bold uppercase tracking-[0.2em] text-[#F5C842]">
                 02 / Community
               </p>
               <h3 className="mt-3 text-2xl font-black md:text-3xl">
@@ -266,7 +274,7 @@ function BrandStorySections() {
       <section className="bg-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
               Learn together. Compete together.
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
@@ -309,7 +317,7 @@ function BrandStorySections() {
       <section className="bg-white px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
               What we do
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
@@ -343,7 +351,7 @@ function BrandStorySections() {
       {/* WHO WE SERVE */}
       <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
+          <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
             A place for every player
           </p>
           <h2 className="max-w-3xl text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
@@ -370,7 +378,7 @@ function BrandStorySections() {
       <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+            <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
               Lessons beyond the game
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
@@ -399,7 +407,7 @@ function BrandStorySections() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C842]">
+            <p className="text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
               Moments that define us
             </p>
             <h3 className="mt-4 text-2xl font-black md:text-3xl">
@@ -421,7 +429,7 @@ function BrandStorySections() {
       {/* CLOSING CTA */}
       <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-5xl rounded-3xl bg-[#F5C842] px-7 py-12 text-center md:px-14 md:py-16">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#4B1FA7]">
+          <p className="text-s font-black uppercase tracking-[0.25em] text-[#4B1FA7]">
             The next chapter starts here
           </p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-6xl">
@@ -737,7 +745,7 @@ function Programs() {
             >
               <div className="flex items-start justify-between">
                 <span className="text-5xl font-black opacity-40">{p.num}</span>
-                <span className="text-xs font-bold uppercase tracking-wider opacity-80">{p.tag}</span>
+                <span className="text-s font-bold uppercase tracking-wider opacity-80">{p.tag}</span>
               </div>
               <h3 className="text-3xl font-black">{p.name}</h3>
               <p className="opacity-85">{p.desc}</p>
@@ -802,429 +810,6 @@ function TrustStats() {
   );
 }
 
-// ─── TEAM ─────────────────────────────────────────────────────────────────────
-const COACHES = [
-  {
-    abbr: "HC",
-    badge: "Head Coach",
-    name: "Saddam Shaikh",
-    role: "Head Coach",
-    bio: "Leads ACE XI's overall philosophy, tactics, and player development. With over a decade of coaching experience, Saddam brings structure, discipline, and passion.",
-    accentColor: "#4B1FA7",
-    imagePath: SaddamImg,
-  },
-  {
-    abbr: "SC",
-    badge: "Skills",
-    name: "Akash Dhurat",
-    role: "AIFF Certified",
-    bio: "Develops technical mastery across all age groups — first touch, dribbling, finishing, and decision-making under pressure. Every player gets sharper under this coach's eye.",
-    accentColor: "#1A1A2E",
-    imagePath: AkashImg,
-  },
-  {
-    abbr: "AC",
-    badge: "Assistant",
-    name: "Harsh Shinde",
-    role: "Youth Development",
-    bio: "Works closely with U6–U10 players to instill love for the game from day one. Focused on fun, fundamentals, and building confidence that lasts a lifetime.",
-    accentColor: "#F5C842",
-    imagePath: HarshImg,
-  },
-];
-
-function CoachCard({ coach, inView, delay }: {
-  coach: typeof COACHES[0];
-  inView: boolean;
-  delay: number;
-}) {
-  const [active, setActive] = useState(false);
-  const isYellow = coach.accentColor === "#F5C842";
-  const textColor = isYellow ? "#0B0612" : "#fff";
-
-  return (
-    <div
-      className="rounded-2xl overflow-hidden flex flex-col relative"
-      style={{
-        background: coach.accentColor,
-        minHeight: "clamp(320px, 44vw, 480px)",
-        opacity: inView ? 1 : 0,
-        transform: inView
-          ? active ? "scale(0.965) translateY(3px)" : "scale(1) translateY(0)"
-          : "translateY(48px) scale(0.97)",
-        transition: inView
-          ? `transform 0.32s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.32s ease, opacity 0.7s ease ${delay}ms`
-          : `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
-        boxShadow: active ? "0 2px 10px rgba(0,0,0,0.18)" : "0 6px 24px rgba(0,0,0,0.09)",
-        cursor: "default",
-        WebkitTapHighlightColor: "transparent",
-        userSelect: "none",
-        willChange: "transform",
-      }}
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
-      <div
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-        style={{
-          background: active ? "rgba(255,255,255,0.06)" : "transparent",
-          transition: "background 0.2s ease",
-          zIndex: 2,
-        }}
-      />
-      <div style={{ position: "relative", height: "clamp(260px, 32vw, 340px)", flexShrink: 0 }}>
-        <img
-          src={coach.imagePath}
-          alt={coach.name}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "top",
-            display: "block",
-            transition: "transform 0.4s ease",
-            transform: active ? "scale(1.04)" : "scale(1)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: `linear-gradient(to bottom, transparent 50%, ${coach.accentColor} 100%)`,
-            pointerEvents: "none",
-            opacity: active ? 0.45 : 0,
-            transition: "opacity 0.35s ease",
-          }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            top: 14,
-            right: 14,
-            fontSize: 9,
-            fontWeight: 700,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            padding: "4px 10px",
-            borderRadius: 999,
-            background: isYellow ? "rgba(0,0,0,0.12)" : "rgba(245,200,66,0.15)",
-            color: isYellow ? "#0B0612" : "#F5C842",
-            backdropFilter: "blur(6px)",
-            zIndex: 1,
-          }}
-        >
-          {coach.badge}
-        </span>
-      </div>
-      <div className="relative p-6 lg:p-8 flex flex-col flex-1">
-        <p
-          style={{
-            fontSize: 9,
-            fontWeight: 700,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: isYellow ? "rgba(0,0,0,0.45)" : "#F5C842",
-            marginBottom: 6,
-          }}
-        >
-          {coach.role}
-        </p>
-        <h3
-          style={{
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(1.75rem, 5vw, 2.6rem)",
-            color: textColor,
-            letterSpacing: active ? "0.025em" : "0em",
-            lineHeight: 0.9,
-            textTransform: "uppercase",
-            transition: "letter-spacing 0.3s ease",
-            marginBottom: 10,
-            fontWeight: 900,
-          }}
-        >
-          {coach.name}
-        </h3>
-        <div
-          style={{
-            height: "1.5px",
-            marginBottom: 12,
-            background: isYellow ? "rgba(0,0,0,0.18)" : "rgba(255,255,255,0.22)",
-            width: active ? "100%" : "36%",
-            transition: "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
-          }}
-        />
-        <p
-          style={{
-            fontSize: 13,
-            fontWeight: 300,
-            lineHeight: 1.65,
-            flex: 1,
-            color: isYellow ? "rgba(0,0,0,0.55)" : "rgba(255,255,255,0.65)",
-          }}
-        >
-          {coach.bio}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Team() {
-  const coachRef = useRef<HTMLDivElement>(null);
-  const [coachInView, setCoachInView] = useState(false);
-
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [contentInView, setContentInView] = useState(false);
-  const [contentActive, setContentActive] = useState(false);
-
-  const founderRef = useRef<HTMLDivElement>(null);
-  const [founderInView, setFounderInView] = useState(false);
-  const [founderActive, setFounderActive] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setCoachInView(true);
-      },
-      { threshold: 0.05 }
-    );
-
-    if (coachRef.current) observer.observe(coachRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setContentInView(true);
-      },
-      { threshold: 0.05 }
-    );
-
-    if (contentRef.current) observer.observe(contentRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setFounderInView(true);
-      },
-      { threshold: 0.05 }
-    );
-
-    if (founderRef.current) observer.observe(founderRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section
-      className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 sm:px-6 lg:px-8"
-      style={{ background: "#F5F4FF" }}
-    >
-      <div className="max-w-7xl mx-auto">
-
-        {/* SECTION HEADING */}
-        <div className="text-center mb-10 lg:mb-14">
-          <p
-            className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
-            style={{ color: "#4B1FA7" }}
-          >
-            The people behind ACE XI
-          </p>
-
-          <h2
-            className="font-black uppercase leading-[0.88]"
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(2.8rem, 8vw, 5rem)",
-              color: "#0B0612",
-            }}
-          >
-            Meet Our{" "}
-            <span style={{ color: "#4B1FA7" }}>Team</span>
-          </h2>
-        </div>
-
-        {/* ALL FOUR TEAM MEMBERS IN ONE ROW */}
-        <div
-          ref={coachRef}
-          className="grid grid-cols-4 gap-3 lg:gap-5"
-        >
-          {/* THREE COACHES */}
-          {COACHES.slice(0, 3).map((coach, i) => (
-            <div key={coach.abbr} className="min-w-0">
-              <CoachCard
-                coach={coach}
-                inView={coachInView}
-                delay={i * 120}
-              />
-            </div>
-          ))}
-
-          {/* CONTENT LEAD */}
-          <div className="min-w-0" ref={contentRef}>
-            <div
-              className="rounded-2xl overflow-hidden flex flex-col relative h-full"
-              style={{
-                background: "#1A1A2E",
-                minHeight: "clamp(320px, 44vw, 480px)",
-                opacity: contentInView ? 1 : 0,
-                transform: contentInView
-                  ? contentActive
-                    ? "scale(0.965) translateY(3px)"
-                    : "scale(1) translateY(0)"
-                  : "translateY(48px) scale(0.97)",
-                transition:
-                  "transform 0.32s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.32s ease, opacity 0.7s ease",
-                boxShadow: contentActive
-                  ? "0 2px 10px rgba(0,0,0,0.18)"
-                  : "0 6px 24px rgba(0,0,0,0.09)",
-                cursor: "default",
-                WebkitTapHighlightColor: "transparent",
-                userSelect: "none",
-                willChange: "transform",
-              }}
-              onMouseEnter={() => setContentActive(true)}
-              onMouseLeave={() => setContentActive(false)}
-            >
-              {/* HOVER OVERLAY */}
-              <div
-                className="absolute inset-0 rounded-2xl pointer-events-none"
-                style={{
-                  background: contentActive
-                    ? "rgba(255,255,255,0.06)"
-                    : "transparent",
-                  transition: "background 0.2s ease",
-                  zIndex: 2,
-                }}
-              />
-
-              {/* IMAGE */}
-              <div
-                style={{
-                  position: "relative",
-                  height: "clamp(180px, 32vw, 340px)",
-                  flexShrink: 0,
-                }}
-              >
-                <img
-                  src={AdityaImg}
-                  alt="Aditya Dhurat"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "top",
-                    display: "block",
-                    transition: "transform 0.4s ease",
-                    transform: contentActive ? "scale(1.04)" : "scale(1)",
-                  }}
-                />
-
-                {/* IMAGE GRADIENT */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(to bottom, transparent 50%, #1A1A2E 100%)",
-                    pointerEvents: "none",
-                    opacity: contentActive ? 0.45 : 0,
-                    transition: "opacity 0.35s ease",
-                  }}
-                />
-
-                {/* ROLE BADGE */}
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 10,
-                    right: 10,
-                    fontSize: 9,
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    padding: "4px 8px",
-                    borderRadius: 999,
-                    background: "rgba(245,200,66,0.15)",
-                    color: "#F5C842",
-                    backdropFilter: "blur(6px)",
-                    zIndex: 1,
-                  }}
-                >
-                  Content
-                </span>
-              </div>
-
-              {/* CONTENT */}
-              <div className="relative p-3 sm:p-4 lg:p-6 flex flex-col flex-1">
-                <p
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "#F5C842",
-                    marginBottom: 6,
-                  }}
-                >
-                  Content Lead
-                </p>
-
-                <h3
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "clamp(1.2rem, 2.2vw, 2.6rem)",
-                    color: "#fff",
-                    letterSpacing: contentActive ? "0.025em" : "0em",
-                    lineHeight: 0.95,
-                    textTransform: "uppercase",
-                    transition: "letter-spacing 0.3s ease",
-                    marginBottom: 10,
-                    fontWeight: 900,
-                    overflowWrap: "break-word",
-                  }}
-                >
-                  Aditya Dhurat
-                </h3>
-
-                <div
-                  style={{
-                    height: "1.5px",
-                    marginBottom: 12,
-                    background: "rgba(255,255,255,0.22)",
-                    width: contentActive ? "100%" : "36%",
-                    transition:
-                      "width 0.45s cubic-bezier(0.34,1.4,0.64,1)",
-                  }}
-                />
-
-                <p
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 300,
-                    lineHeight: 1.65,
-                    flex: 1,
-                    color: "rgba(255,255,255,0.65)",
-                  }}
-                >
-                  The eye behind every frame. Aditya captures the energy,
-                  grit, and heart of ACE XI — turning every session and match
-                  into a story worth telling.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ─── EVENTS ───────────────────────────────────────────────────────────────────
 const EVENTS = [
   {
@@ -1265,7 +850,7 @@ function Events() {
     <section className="py-24 px-5 md:px-8" style={{ background: "#0B0612" }}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
         <div>
-          <div className="text-xs font-bold tracking-widest mb-3" style={{ color: "#F5C842" }}>
+          <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#F5C842" }}>
             ORGANIZED BY ACE XI
           </div>
           <h2
@@ -1325,7 +910,7 @@ function Events() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span
-                      className="hidden sm:inline text-xs font-bold px-3 py-1 rounded-full transition-all duration-300"
+                      className="hidden sm:inline text-s font-bold px-3 py-1 rounded-full transition-all duration-300"
                       style={{
                         background: isOpen ? "#F5C842" : "rgba(245,200,66,0.1)",
                         color: isOpen ? "#0B0612" : "#F5C842",
@@ -1426,65 +1011,60 @@ const ACH = [
 ];
 
 function Achievements() {
-  const [active, setActive] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const selected = ACH[active];
-
-  const startLoop = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => setActive((a) => (a + 1) % ACH.length), 3500);
-  };
-
-  useEffect(() => {
-    startLoop();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, []);
-
-  const handleSelect = (i: number) => { setActive(i); startLoop(); };
-
   return (
-    <section className="py-24 px-5 md:px-8" style={{ background: "#F5F3EE" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <div className="text-xs font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
-            MILESTONES
-          </div>
-          <h2 className="font-black text-[#0B0612] leading-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-            Our<br />Achievements
+    <section
+      className="overflow-hidden px-5 py-20 md:px-8 md:py-24"
+      style={{
+        background:
+          "linear-gradient(135deg, #F5F3EE 0%, #ffffff 55%, #eee8fa 100%)",
+      }}
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10">
+          <p className="mb-3 text-s font-bold tracking-[0.25em] text-[#4B1FA7]">
+            OUR JOURNEY
+          </p>
+          <h2
+            className="font-black uppercase leading-tight"
+            style={{
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              background: "linear-gradient(90deg, #0B0612, #4B1FA7)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Our Achievements
           </h2>
         </div>
-        <div
-          className="rounded-3xl p-10 md:p-14 text-white transition-all duration-500"
-          style={{ background: selected.bg, minHeight: 320 }}
-        >
-          <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="text-7xl">{selected.emoji}</div>
-            <div className="flex-1">
-              <span
-                className="inline-block text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-4"
-                style={{ background: "rgba(245,200,66,0.2)", color: "#F5C842" }}
-              >
-                {selected.subtitle}
-              </span>
-              <h3 className="text-3xl md:text-4xl font-black mb-4">{selected.title}</h3>
-              <p className="text-white/80 text-lg max-w-2xl">{selected.desc}</p>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center gap-2 mt-8">
-          {ACH.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleSelect(i)}
-              aria-label={`Show achievement ${i + 1}`}
-              className="transition-all duration-300 rounded-full"
+
+        <div className="flex gap-4 overflow-x-auto pb-5 snap-x snap-mandatory">
+          {ACH.map((item, index) => (
+            <article
+              key={item.title}
+              className="min-w-[260px] flex-1 snap-start rounded-2xl p-6 text-white shadow-lg transition-transform duration-300 hover:-translate-y-2 md:min-w-0"
               style={{
-                width: active === i ? "24px" : "8px",
-                height: "8px",
-                background: "#4B1FA7",
-                opacity: active === i ? 1 : 0.25,
+                background: item.bg,
+                minHeight: 245,
               }}
-            />
+            >
+              <div className="mb-5 text-4xl">{item.emoji}</div>
+
+              <p className="mb-3 text-s font-bold uppercase tracking-wider text-[#F5C842]">
+                {item.subtitle}
+              </p>
+
+              <h3 className="mb-3 text-xl font-black leading-tight">
+                {item.title}
+              </h3>
+
+              <p className="text-sm leading-6 text-white/75">
+                {item.desc}
+              </p>
+
+              <div className="mt-5 text-s font-bold text-[#F5C842]">
+                {String(index + 1).padStart(2, "0")} / 05
+              </div>
+            </article>
           ))}
         </div>
       </div>
@@ -1507,7 +1087,7 @@ function WhyACE() {
     <section className="py-24 px-5 md:px-8" style={{ background: "#fff" }}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
         <div className="md:sticky md:top-24 md:self-start">
-          <div className="text-xs font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
+          <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
             MAKE THE RIGHT CHOICE
           </div>
           <h2 className="font-black text-[#0B0612] leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
@@ -1570,7 +1150,6 @@ function Index() {
         <Hero />
         <Programs />
         <TrustStats />
-        <Team />
         <Events />
         <Achievements />
         <BrandStorySections />
