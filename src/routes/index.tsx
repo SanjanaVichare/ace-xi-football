@@ -18,8 +18,8 @@ import herobg from "../assets/acexi-bg.jpeg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ACE XI Football Academy — Mumbai's Elite Football Training" },
-      { name: "description", content: "Train like a pro at ACE XI, Mumbai's premier football academy. Licensed coaches, structured programs for U6–U16, girls' football, and competitive tournaments." },
+      { title: "ACE XI Football Club — Mumbai Football Academy" },
+      { name: "description", content: "Train like a pro at ACE XI, Mumbai football club and academy. Licensed coaches, structured programs for U6–U16, girls' football, and competitive tournaments." },
       { property: "og:title", content: "ACE XI Football Academy" },
       { property: "og:description", content: "Mumbai's elite football academy. Train like a pro." },
     ],
@@ -119,13 +119,13 @@ function BrandStorySections() {
   return (
     <>
       {/* ABOUT / MISSION */}
-      <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
           <div>
             <p className="mb-4 text-s font-bold uppercase tracking-[0.28em] text-[#F5C842]">
               More than a game
             </p>
-            <h2 className="text-4xl font-black uppercase leading-[0.95] md:text-6xl">
+            <h2 className="text-5xl font-black uppercase leading-[0.95] md:text-7xl">
               We play.
               <br />
               We fight.
@@ -146,11 +146,11 @@ function BrandStorySections() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.16] via-[#8B5CF6]/[0.16] to-[#F5C842]/[0.10] p-7 shadow-[0_8px_40px_rgba(139,92,246,0.22)] backdrop-blur-2xl transition-all duration-500 hover:border-[#F5C842]/40 hover:shadow-[0_12px_55px_rgba(139,92,246,0.35)] md:p-10">
             <p className="text-s font-bold uppercase tracking-[0.24em] text-[#F5C842]">
               Our mission
             </p>
-            <h3 className="mt-4 text-2xl font-black md:text-3xl">
+            <h3 className="mt-4 text-3xl font-black leading-tight md:text-4xl">
               Build better players. Build stronger communities.
             </h3>
             <ul className="mt-7 space-y-4">
@@ -172,7 +172,7 @@ function BrandStorySections() {
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
@@ -181,7 +181,7 @@ function BrandStorySections() {
             <h2 className="text-4xl font-black uppercase leading-tight text-[#0B0612] md:text-5xl">
               Our core values
             </h2>
-            <p className="mt-4 leading-7 text-[#0B0612]/65">
+            <p className="mt-4 text-lg leading-8 text-[#0B0612]/75 md:text-xl lg:whitespace-nowrap">
               The habits built on the pitch shape how we learn, compete, and
               support one another beyond the game.
             </p>
@@ -190,7 +190,7 @@ function BrandStorySections() {
             {CORE_VALUES.map((value) => (
               <article
                 key={value.number}
-                className="rounded-2xl border border-[#0B0612]/10 bg-white p-6 transition-transform duration-300 hover:-translate-y-1"
+                className="rounded-2xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-6 shadow-[0_8px_30px_rgba(75,31,167,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#4B1FA7]/30 hover:shadow-[0_15px_35px_rgba(75,31,167,0.16)]"
               >
                 <p className="text-4xl font-black text-[#4B1FA7]/30">
                   {value.number}
@@ -208,7 +208,7 @@ function BrandStorySections() {
       </section>
 
       {/* SCHOOL + SOCIETY PROGRAMS */}
-      <section className="bg-white px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-gradient-to-br from-white via-[#F5F3EE] to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-3xl">
             <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
@@ -271,11 +271,11 @@ function BrandStorySections() {
       </section>
 
       {/* CLUB + COMPETITION */}
-      <section className="bg-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-24 text-white md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
           <div>
             <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
-              Learn together. Compete together.
+              ACE XI FOOTBALL CLUB
             </p>
             <h2 className="text-4xl font-black uppercase leading-tight md:text-5xl">
               Football club
@@ -303,7 +303,7 @@ function BrandStorySections() {
             ].map(([number, label]) => (
               <div
                 key={number}
-                className="min-h-36 rounded-2xl border border-white/20 bg-white/[0.08] p-5"
+                className="min-h-36 rounded-2xl border border-white/20 bg-gradient-to-br from-white/[0.18] via-[#8B5CF6]/[0.14] to-[#F5C842]/[0.08] p-5 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-[#F5C842]/50"
               >
                 <p className="text-3xl font-black text-[#F5C842]">{number}</p>
                 <p className="mt-5 font-bold">{label}</p>
@@ -314,7 +314,7 @@ function BrandStorySections() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-white px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-gradient-to-br from-white via-[#F5F3EE] to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
@@ -349,7 +349,7 @@ function BrandStorySections() {
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
+      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#4B1FA7]">
             A place for every player
@@ -375,7 +375,7 @@ function BrandStorySections() {
       </section>
 
       {/* LESSONS + COMMUNITY */}
-      <section className="bg-[#0B0612] px-5 py-20 text-white md:px-8 md:py-24">
+      <section className="bg-gradient-to-br from-[#0B0612] via-[#241044] to-[#4B1FA7] px-5 py-20 text-white md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
           <div>
             <p className="mb-3 text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
@@ -406,7 +406,7 @@ function BrandStorySections() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-7 md:p-9">
+          <div className="rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.16] via-[#8B5CF6]/[0.14] to-[#F5C842]/[0.08] p-7 shadow-[0_12px_45px_rgba(139,92,246,0.20)] backdrop-blur-2xl md:p-9">
             <p className="text-s font-bold uppercase tracking-[0.25em] text-[#F5C842]">
               Moments that define us
             </p>
@@ -427,8 +427,8 @@ function BrandStorySections() {
       </section>
 
       {/* CLOSING CTA */}
-      <section className="bg-[#F5F3EE] px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-5xl rounded-3xl bg-[#F5C842] px-7 py-12 text-center md:px-14 md:py-16">
+      <section className="bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-5xl rounded-3xl border border-white/40 bg-gradient-to-br from-[#F5C842] via-[#FFD966] to-[#FFF0B3] px-7 py-12 text-center shadow-[0_18px_55px_rgba(75,31,167,0.16)] md:px-14 md:py-16">
           <p className="text-s font-black uppercase tracking-[0.25em] text-[#4B1FA7]">
             The next chapter starts here
           </p>
@@ -445,15 +445,7 @@ function BrandStorySections() {
               href="tel:9082780734"
               className="inline-flex items-center justify-center rounded-full bg-[#0B0612] px-7 py-4 font-bold text-white transition-transform hover:-translate-y-1"
             >
-              Call AceXI · 9082780734
-            </a>
-            <a
-              href="https://www.acexifc.com"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-[#0B0612]/25 px-7 py-4 font-bold text-[#0B0612] transition-colors hover:bg-white/50"
-            >
-              Visit AceXI
+              Call ACE XI
             </a>
           </div>
         </div>
@@ -704,7 +696,7 @@ const PROGRAMS = [
     name: "Summer Camp",
     desc: "Skill development, fitness & fun. Perfect for beginners to intermediate players.",
     batches: ["7:00–8:00 AM", "8:00–9:00 AM", "9:00–10:00 AM"],
-    color: "#F5C842",
+    color: "linear-gradient(135deg, #F5C842 0%, #FFD966 55%, #FFF0B3 100%)",
     text: "#0B0612",
   },
   {
@@ -713,7 +705,7 @@ const PROGRAMS = [
     name: "Academy Training",
     desc: "Structured evening sessions, 3×/week model tailored by age group.",
     batches: ["U6·U8·U10·Girls → Mon·Wed·Fri", "U12·U14·U16 → Tue·Thu·Sat"],
-    color: "#4B1FA7",
+    color: "linear-gradient(135deg, #4B1FA7 0%, #713BD1 55%, #A77BEB 100%)",
     text: "#fff",
   },
   {
@@ -722,14 +714,14 @@ const PROGRAMS = [
     name: "Training Levels",
     desc: "Every player assessed and placed in the right level for maximum growth.",
     batches: ["Beginner", "Intermediate", "Advanced"],
-    color: "#1A1A2E",
+    color: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)",
     text: "#fff",
   },
 ];
 
 function Programs() {
   return (
-    <section className="py-24 px-5 md:px-8" style={{ background: "#fff" }}>
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-28 md:px-8 md:py-32">
       <div className="max-w-7xl mx-auto">
         <div className="mb-14">
           <h2 className="font-black text-[#0B0612] leading-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
@@ -784,7 +776,7 @@ function StatBlock({ n, label, active }: { n: number; label: string; active: boo
 function TrustStats() {
   const { ref, inView } = useInView(0.3);
   return (
-    <section ref={ref} className="py-24 px-5 md:px-8" style={{ background: "#0B0612" }}>
+    <section ref={ref} className="py-24 px-5 md:px-8" style={{ background: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)" }}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
         <div>
           <h2 className="text-white font-black mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
@@ -842,12 +834,12 @@ const EVENTS = [
   },
 ];
 
-function Events() {
+/*function Events() {
   const [open, setOpen] = useState<string | null>(null);
   const toggle = (num: string) => setOpen((prev) => (prev === num ? null : num));
 
   return (
-    <section className="py-24 px-5 md:px-8" style={{ background: "#0B0612" }}>
+    <section className="py-24 px-5 md:px-8" style={{ background: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)" }}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
         <div>
           <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#F5C842" }}>
@@ -970,7 +962,7 @@ function Events() {
     </section>
   );
 }
-
+*/
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────────────────
 const ACH = [
   {
@@ -1037,11 +1029,11 @@ function Achievements() {
           </h2>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-5 snap-x snap-mandatory">
+        <div className="flex flex-nowrap gap-5 overflow-x-auto pb-6 snap-x snap-mandatory">
           {ACH.map((item, index) => (
             <article
               key={item.title}
-              className="min-w-[260px] flex-1 snap-start rounded-2xl p-6 text-white shadow-lg transition-transform duration-300 hover:-translate-y-2 md:min-w-0"
+              className="w-[280px] min-w-[280px] flex-shrink-0 snap-start rounded-2xl p-6 text-white shadow-xl transition-transform duration-300 hover:-translate-y-2 md:w-[calc(20%-16px)] md:min-w-0"
               style={{
                 background: item.bg,
                 minHeight: 245,
@@ -1061,9 +1053,6 @@ function Achievements() {
                 {item.desc}
               </p>
 
-              <div className="mt-5 text-s font-bold text-[#F5C842]">
-                {String(index + 1).padStart(2, "0")} / 05
-              </div>
             </article>
           ))}
         </div>
@@ -1084,15 +1073,15 @@ const WHY = [
 
 function WhyACE() {
   return (
-    <section className="py-24 px-5 md:px-8" style={{ background: "#fff" }}>
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-28 md:px-8 md:py-32">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
         <div className="md:sticky md:top-24 md:self-start">
           <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
             MAKE THE RIGHT CHOICE
           </div>
-          <h2 className="font-black text-[#0B0612] leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+          <h2 className="font-black text-[#0B0612] leading-[0.95]" style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}>
             Why<br />Choose<br />
-            <span style={{ color: "#4B1FA7" }}>ACE?</span>
+            ACE?
           </h2>
           <p className="mt-6 text-[#0B0612]/70 text-lg max-w-md">
             We're not just another football academy. We're a system designed to bring out the best in every player.
@@ -1100,7 +1089,7 @@ function WhyACE() {
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full font-bold text-white"
-            style={{ background: "#4B1FA7" }}
+            style={{ background: "linear-gradient(135deg, #4B1FA7, #713BD1, #A77BEB)" }}
           >
             Join ACE XI <ChevronRight size={18} />
           </Link>
@@ -1109,7 +1098,7 @@ function WhyACE() {
           {WHY.map((item) => (
             <div
               key={item.t}
-              className="rounded-2xl p-6 border border-[#0B0612]/10 hover:border-[#4B1FA7]/40 transition-colors"
+              className="rounded-3xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-8 shadow-[0_10px_35px_rgba(75,31,167,0.10)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#4B1FA7]/40 hover:shadow-[0_18px_45px_rgba(75,31,167,0.20)]"
             >
               <div className="font-bold text-lg text-[#0B0612] mb-2">{item.t}</div>
               <p className="text-sm text-[#0B0612]/65">{item.d}</p>
@@ -1128,7 +1117,7 @@ function WhyACE() {
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[#0B0612]"
-            style={{ background: "#F5C842" }}
+            style={{ background: "linear-gradient(135deg, #F5C842, #FFD966, #FFF0B3)" }}
           >
             Get Started Today <ArrowUpRight size={18} />
           </Link>
@@ -1143,14 +1132,13 @@ function Index() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div style={{ background: "#fff" }}>
+    <div style={{ background: "linear-gradient(135deg, #F5F3EE 0%, #FFFFFF 55%, #EEE8FA 100%)" }}>
       {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
       <Navbar />
       <main>
         <Hero />
         <Programs />
         <TrustStats />
-        <Events />
         <Achievements />
         <BrandStorySections />
         <WhyACE />

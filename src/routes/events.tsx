@@ -199,15 +199,15 @@ function EventsPage() {
               className="max-w-5xl font-black uppercase leading-[0.86] text-white"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(4rem, 10vw, 8.5rem)",
+                fontSize: "clamp(3.4rem, 9vw, 7.5rem)",
               }}
             >
               Compete.
               <br />
-              <span style={{ color: "#F5C842" }}>Grow.</span><br>
-              </br> Win.
+              <span style={{ color: "#F5C842" }}>Grow.</span>
+              <br />
+              Become Legends.
             </h1>
-
             <p className="mt-7 max-w-xl text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
               From exciting tournaments to competitive leagues, every event
               is an opportunity to challenge yourself, build confidence, and
