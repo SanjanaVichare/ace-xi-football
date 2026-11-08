@@ -253,75 +253,43 @@ function EventsPage() {
               {EVENTS.map((ev) => (
                 <article
                   key={ev.num}
-                  className={`group relative flex min-h-[250px] flex-col overflow-hidden rounded-sm border p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${ev.featured
-                    ? "border-[#4B1FA7] bg-[#0B0612] text-white"
-                    : "border-[#0B0612]/10 bg-white text-[#0B0612] hover:border-[#4B1FA7]/40"
-                    }`}
+                  className="group relative flex min-h-[250px] flex-col overflow-hidden rounded-sm border border-[#0B0612]/10 bg-white p-7 text-[#0B0612] transition-all duration-500 ease-out hover:-translate-y-2 hover:border-[#4B1FA7] hover:bg-[#0B0612] hover:text-white hover:shadow-[0_18px_40px_rgba(75,31,167,0.22)]"
                 >
                   {/* Decorative number */}
                   <span
                     aria-hidden="true"
-                    className="absolute -right-2 -top-8 select-none text-8xl font-black leading-none transition-transform duration-500 group-hover:scale-110"
-                    style={{
-                      color: ev.featured
-                        ? "rgba(245,200,66,0.09)"
-                        : "rgba(75,31,167,0.055)",
-                    }}
+                    className="absolute -right-2 -top-8 select-none text-8xl font-black leading-none text-[#4B1FA7]/[0.055] transition-all duration-500 group-hover:scale-110 group-hover:text-[#F5C842]/10"
                   >
                     {ev.num}
                   </span>
 
                   <div className="relative z-10 flex items-center justify-between">
-                    <span
-                      className="text-xs font-black tracking-[0.2em]"
-                      style={{
-                        color: ev.featured ? "#F5C842" : "#4B1FA7",
-                      }}
-                    >
+                    <span className="text-xs font-black tracking-[0.2em] text-[#4B1FA7] transition-colors duration-500 group-hover:text-[#F5C842]">
                       EVENT {ev.num}
                     </span>
 
-                    <span
-                      className="rounded-full px-3 py-1 text-[10px] font-bold tracking-wide"
-                      style={{
-                        background: ev.featured
-                          ? "rgba(245,200,66,0.13)"
-                          : "rgba(75,31,167,0.08)",
-                        color: ev.featured ? "#F5C842" : "#4B1FA7",
-                      }}
-                    >
+                    <span className="rounded-full bg-[#4B1FA7]/[0.08] px-3 py-1 text-[10px] font-bold tracking-wide text-[#4B1FA7] transition-all duration-500 group-hover:bg-[#F5C842]/[0.13] group-hover:text-[#F5C842]">
                       {ev.tag}
                     </span>
                   </div>
 
                   <div className="relative z-10 mt-auto pt-12">
-                    <div
-                      className="mb-3 h-1 w-9 transition-all duration-300 group-hover:w-16"
-                      style={{
-                        background: ev.featured ? "#F5C842" : "#4B1FA7",
-                      }}
-                    />
+                    <div className="mb-3 h-1 w-9 bg-[#4B1FA7] transition-all duration-500 group-hover:w-16 group-hover:bg-[#F5C842]" />
 
                     <h3
-                      className="text-2xl font-black uppercase leading-tight sm:text-3xl"
+                      className="text-2xl font-black uppercase leading-tight text-[#0B0612] transition-colors duration-500 group-hover:text-white sm:text-3xl"
                       style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                     >
                       {ev.name}
                     </h3>
 
-                    <p
-                      className={`mt-3 max-w-sm text-sm leading-6 ${ev.featured
-                        ? "text-white/60"
-                        : "text-[#0B0612]/55"
-                        }`}
-                    >
+                    <p className="mt-3 max-w-sm text-sm leading-6 text-[#0B0612]/55 transition-colors duration-500 group-hover:text-white/60">
                       {ev.detail}
                     </p>
                   </div>
                 </article>
               ))}
             </div>
-
             {/* Bottom note */}
             <div className="mt-12 flex flex-col gap-3 border-t border-[#0B0612]/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs font-semibold tracking-wide text-[#0B0612]/50">

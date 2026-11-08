@@ -66,7 +66,7 @@ function AboutPage() {
             {/* Large XI watermark */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 select-none font-black leading-none"
+              className="pointer-events-none absolute right-30 top-1/2 -translate-y-1/2 select-none font-black leading-none"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
                 fontSize: "clamp(18rem, 38vw, 38rem)",
@@ -270,11 +270,6 @@ function AboutPage() {
                   Our purpose<span className="text-[#6D35C8]">.</span>
                 </h2>
               </div>
-
-              <p className="max-w-md text-sm leading-6 text-[#241044]/55">
-                Everything we do is guided by a clear purpose and a belief in
-                the power of football.
-              </p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">

@@ -421,7 +421,7 @@ function BrandStorySections() {
                 key={item}
                 className="group flex min-h-36 flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-[#6D35C8]/[0.18] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30"
               >
-                <span className="text-3xl font-black text-[#F5C842]/50 transition-colors group-hover:text-[#F5C842]">
+                <span className="text-3xl font-black text-[#F5C842]/95 transition-colors group-hover:text-[#F5C842]">
                   0{index + 1}
                 </span>
 
@@ -1254,9 +1254,9 @@ function WhyACE() {
           {WHY.map((item) => (
             <div
               key={item.t}
-              className="rounded-3xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-8 shadow-[0_10px_35px_rgba(75,31,167,0.10)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#4B1FA7]/40 hover:shadow-[0_18px_45px_rgba(75,31,167,0.20)]"
+              className="rounded-3xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-8 text-[#4B1FA7] shadow-[0_10px_35px_rgba(75,31,167,0.10)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#4B1FA7]/40 hover:shadow-[0_18px_45px_rgba(75,31,167,0.20)]"
             >
-              <div className="font-bold text-lg text-[#0B0612] mb-2">{item.t}</div>
+              <div className="font-bold text-lg text-[#4B1FA7] mb-2">{item.t}</div>
               <p className="text-sm text-[#0B0612]/65">{item.d}</p>
             </div>
           ))}

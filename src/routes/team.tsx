@@ -85,7 +85,7 @@ const COACHES: Profile[] = [
 
     role: "Head Coach",
 
-    bio: "Leads ACE XI's overall philosophy, tactics, and player development. With over a decade of coaching experience, Saddam brings structure, discipline, and passion to every session — shaping players from the ground up.",
+    bio: "Leads ACE XI's overall philosophy, tactics, and player development. With over a decade of coaching experience.",
 
     accent: COLORS.purple,
 
@@ -99,7 +99,7 @@ const COACHES: Profile[] = [
 
     role: "AIFF Certified",
 
-    bio: "Develops technical mastery across all age groups — first touch, dribbling, finishing, and decision-making under pressure. Every player gets sharper under this coach's eye.",
+    bio: "Develops technical mastery across all age groups — first touch, dribbling, finishing, and decision-making under pressure.",
 
     accent: COLORS.navy,
 
@@ -113,7 +113,7 @@ const COACHES: Profile[] = [
 
     role: "Youth Development",
 
-    bio: "Works closely with U6–U10 players to instill love for the game from day one. Focused on fun, fundamentals, and building confidence that lasts a lifetime.",
+    bio: "Works closely with U6–U10 players to instill love for the game from day one. Focused on fun, fundamentals, and building confidence.",
 
     accent: COLORS.gold,
 
@@ -131,7 +131,7 @@ const CONTENT_LEAD: Profile = {
 
   role: "Content Lead",
 
-  bio: "The eye behind every frame. Aditya captures the energy, grit, and heart of ACE XI — turning every session and match into a story worth telling.",
+  bio: "The eye behind every frame. Aditya captures the energy, grit, and heart of ACE XI, turning every session and match into a story.",
 
   accent: COLORS.navy,
 
@@ -300,7 +300,7 @@ function ProfileCard({
       className="relative flex h-full flex-col overflow-hidden rounded-2xl"
       style={{
         background: profile.accent,
-        minHeight: "clamp(320px, 44vw, 480px)",
+        minHeight: "clamp(260px, 36vw, 400px)",
         opacity: inView ? 1 : 0,
         transform: inView
           ? active
@@ -321,6 +321,7 @@ function ProfileCard({
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
+      {/* Hover Overlay */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl"
         style={{
@@ -330,9 +331,10 @@ function ProfileCard({
         }}
       />
 
+      {/* Profile Image */}
       <div
         className="relative shrink-0"
-        style={{ height: "clamp(220px, 32vw, 340px)" }}
+        style={{ height: "clamp(160px, 25vw, 260px)" }}
       >
         <img
           src={profile.image}
@@ -346,6 +348,7 @@ function ProfileCard({
           }}
         />
 
+        {/* Image Gradient */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -354,12 +357,13 @@ function ProfileCard({
             transition: "opacity 0.35s ease",
           }}
         />
-
       </div>
 
-      <div className="relative flex flex-1 flex-col p-4 sm:p-5 lg:p-6">
+      {/* Profile Details */}
+      <div className="relative flex flex-1 flex-col p-3 sm:p-4 lg:p-5">
+        {/* Role */}
         <p
-          className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.16em]"
+          className="mb-1 text-[8px] font-bold uppercase tracking-[0.14em] sm:text-[9px]"
           style={{
             color: isGold ? "rgba(0,0,0,0.45)" : COLORS.gold,
           }}
@@ -367,11 +371,12 @@ function ProfileCard({
           {profile.role}
         </p>
 
+        {/* Name */}
         <h3
-          className="mb-2.5 uppercase leading-[0.92]"
+          className="mb-2 uppercase leading-[0.95]"
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(1.35rem, 2.4vw, 2.4rem)",
+            fontSize: "clamp(1.15rem, 2vw, 1.8rem)",
             color: textColor,
             letterSpacing: active ? "0.025em" : "0em",
             transition: "letter-spacing 0.3s ease",
@@ -382,8 +387,9 @@ function ProfileCard({
           {profile.name}
         </h3>
 
+        {/* Divider */}
         <div
-          className="mb-3 h-px"
+          className="mb-2 h-px"
           style={{
             background: isGold
               ? "rgba(0,0,0,0.18)"
@@ -393,12 +399,17 @@ function ProfileCard({
           }}
         />
 
+        {/* Description */}
         <p
-          className="flex-1 text-[12px] font-light leading-[1.65] sm:text-[13px]"
+          className="flex-1 text-[clamp(11px,1vw,14px)] font-light leading-relaxed"
           style={{
             color: isGold
               ? "rgba(0,0,0,0.55)"
-              : "rgba(255,255,255,0.65)",
+              : "rgba(255,255,255,0.75)",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
           }}
         >
           {profile.bio}
