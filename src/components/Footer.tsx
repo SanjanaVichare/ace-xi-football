@@ -28,7 +28,7 @@ const Footer = () => {
                 <Mail size={14} /> acexi.official@gmail.com
               </a>
               <div className="flex gap-3 pt-2">
-                {["Instagram", "WhatsApp", "YouTube", "X"].map((social) => (
+                {["Instagram", "WhatsApp", "YouTube"].map((social) => (
                   <a
                     key={social}
                     href="#"
@@ -47,7 +47,7 @@ const Footer = () => {
               {[
                 "Football",
                 "School Coaching",
-                "College Coaching",
+                "Residential Coaching",
               ].map((item) => (
                 <li key={item}>
                   <a
