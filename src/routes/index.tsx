@@ -938,7 +938,7 @@ function TrustStats() {
             Numbers That Speak
           </h2>
           <div className="grid grid-cols-3 gap-6">
-            <StatBlock n={50} label="Players Trained" active={inView} />
+            <StatBlock n={150} label="Players Trained" active={inView} />
             <StatBlock n={25} label="Tournaments" active={inView} />
             <StatBlock n={3} label="Partner Schools" active={inView} />
           </div>
@@ -1121,39 +1121,25 @@ const EVENTS = [
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────────────────
 const ACH = [
   {
-    emoji: "🏆",
-    title: "Mumbai Championship 2024",
-    subtitle: "1st Place · Open Category",
-    desc: "ACE XI clinched the Mumbai Football Championship, defeating 24 other teams across all age groups.",
+    emoji: "⚽",
+    title: "150+ Students Trained",
+    subtitle: "Grassroots to Advanced Levels",
+    desc: "ACE XI has trained over 150 students, helping young players develop their football skills, fitness, confidence and teamwork.",
     bg: "linear-gradient(145deg, #2a0f6b, #4B1FA7)",
   },
   {
-    emoji: "🥇",
-    title: "Best Youth Academy Award",
-    subtitle: "City Recognition · 2024",
-    desc: "Recognized as Mumbai's top youth football academy for structured training and player development.",
+    emoji: "🏆",
+    title: "Mumbai Football Association",
+    subtitle: "League Participation",
+    desc: "ACE XI players actively compete in Mumbai Football Association leagues, gaining valuable match experience and competing against teams across Mumbai.",
     bg: "linear-gradient(145deg, #0f0f2e, #1a1a4e)",
   },
   {
-    emoji: "⚽",
-    title: "50+ Players Trained",
-    subtitle: "All Age Groups",
-    desc: "Over 50 players across U6 to U16 have gone through ACE XI's structured training programs.",
-    bg: "linear-gradient(145deg, #0a1628, #1a3a60)",
-  },
-  {
     emoji: "🌟",
-    title: "State Level Representation",
-    subtitle: "Maharashtra State · 2023–24",
-    desc: "Multiple ACE XI players were selected to represent Maharashtra at state-level competitions.",
-    bg: "linear-gradient(145deg, #1a0530, #2d0f50)",
-  },
-  {
-    emoji: "🎖️",
-    title: "3 Partner Schools Signed",
-    subtitle: "Mumbai School Network",
-    desc: "ACE XI has partnered with 3 schools across Mumbai to run structured in-school football programs.",
-    bg: "linear-gradient(145deg, #0f0520, #2d1070)",
+    title: "Grassroots to U18 Teams",
+    subtitle: "Boys & Girls · All Age Groups",
+    desc: "ACE XI provides a structured football pathway with boys' and girls' teams, nurturing young talent from grassroots levels all the way to the Under-18 category.",
+    bg: "linear-gradient(145deg, #0a1628, #1a3a60)",
   },
 ];
 
