@@ -844,13 +844,12 @@ function Hero() {
   );
 }
 
-// ─── PROGRAMS ─────────────────────────────────────────────────────────────────
 const PROGRAMS = [
   {
     num: "01",
     tag: "Seasonal · Mon–Fri",
-    name: "Summer Camp",
-    desc: "Skill development, fitness & fun. Perfect for beginners to intermediate players.",
+    name: "Residential Coaching",
+    desc: "Group football coaching conducted at local grounds, bringing together students from nearby schools and residential communities to learn, practice and develop their football skills.",
     batches: ["7:00–8:00 AM", "8:00–9:00 AM", "9:00–10:00 AM"],
     color: "linear-gradient(135deg, #F5C842 0%, #FFD966 55%, #FFF0B3 100%)",
     text: "#0B0612",
@@ -859,7 +858,7 @@ const PROGRAMS = [
     num: "02",
     tag: "Regular · Mon–Sat",
     name: "Academy Training",
-    desc: "Structured evening sessions, 3×/week model tailored by age group.",
+    desc: "Structured football training for enrolled academy players, with regular practice sessions, age-specific batches, fitness development and competitive match preparation.",
     batches: ["U6·U8·U10·Girls → Mon·Wed·Fri", "U12·U14·U16 → Tue·Thu·Sat"],
     color: "linear-gradient(135deg, #4B1FA7 0%, #713BD1 55%, #A77BEB 100%)",
     text: "#fff",
@@ -867,8 +866,8 @@ const PROGRAMS = [
   {
     num: "03",
     tag: "All Ages · All Levels",
-    name: "Training Levels",
-    desc: "Every player assessed and placed in the right level for maximum growth.",
+    name: "School Coaching",
+    desc: "On-campus football coaching programmes for schools, where professional coaches train students through structured sessions focused on football fundamentals, teamwork, fitness and match skills.",
     batches: ["Beginner", "Intermediate", "Advanced"],
     color: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)",
     text: "#fff",

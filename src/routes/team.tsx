@@ -98,25 +98,15 @@ const COACHES: Profile[] = [
     name: "Akash Dhurat",
 
     role: "AIFF Certified",
-
     bio: "Develops technical mastery across all age groups — first touch, dribbling, finishing, and decision-making under pressure.",
-
     accent: COLORS.navy,
-
     image: AkashImg,
-
   },
-
   {
-
     name: "Harsh Shinde",
-
     role: "Youth Development",
-
     bio: "Works closely with U6–U10 players to instill love for the game from day one. Focused on fun, fundamentals, and building confidence.",
-
     accent: COLORS.gold,
-
     image: HarshImg,
 
   },
