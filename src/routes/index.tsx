@@ -27,13 +27,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-/*
-ACE XI CONTENT ADDITIONS
-Add this component to your existing index.tsx file, after the Hero component.
-Then render <BrandStorySections /> immediately after <Hero /> inside <main>.
-This uses the existing Tailwind setup and your current purple/gold brand palette.
-*/
-
 const gradients = {
   dark: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)",
   light: "linear-gradient(135deg, #F5F3EE 0%, #FFFFFF 55%, #EEE8FA 100%)",
@@ -155,19 +148,19 @@ function BrandStorySections() {
   return (
     <>
       {/* ABOUT / MISSION */}
-      <section className="relative isolate overflow-hidden bg-[#241044] px-5 py-14 text-white md:px-8 md:py-20">
+      <section className="relative isolate overflow-hidden bg-[#241044] px-4 py-12 text-white sm:px-5 md:px-8 md:py-20">
         <div className="pointer-events-none absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#6D35C8]/30 blur-[120px]" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-[300px] w-[300px] rounded-full bg-[#F5C842]/10 blur-[100px]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="mb-4 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
-              <span className="h-[2px] w-10 bg-[#F5C842]" />
+            <p className="mb-4 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#F5C842] sm:text-xs sm:tracking-[0.3em]">
+              <span className="h-[2px] w-8 shrink-0 bg-[#F5C842] sm:w-10" />
               More than a game
             </p>
 
             <h2
-              className="text-6xl font-black uppercase leading-[0.88] tracking-tight sm:text-7xl md:text-8xl"
+              className="text-[clamp(2.5rem,10vw,6rem)] font-black uppercase leading-[0.88] tracking-tight"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               We play.
@@ -177,41 +170,40 @@ function BrandStorySections() {
               <span className="text-[#F5C842]">We ACE.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/65 md:text-lg">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/65 sm:text-base md:text-lg">
               AceXI is a football organization committed to helping grow the
               game in India. We believe football builds more than sporting
               ability — it develops discipline, confidence, leadership,
               teamwork, and character.
             </p>
 
-            <p className="mt-3 max-w-xl text-sm leading-7 text-white/50 md:text-base">
+            <p className="mt-3 max-w-xl text-xs leading-6 text-white/50 sm:text-sm md:text-base md:leading-7">
               Through structured coaching, competitive opportunities, and
               partnerships with schools, residential societies, parents, and
               local communities, we aim to make football more accessible to
               players of different ages and skill levels.
             </p>
 
-            <div className="mt-6 flex items-center gap-4">
-              <span className="h-10 w-1 bg-[#F5C842]" />
-              <p className="text-sm font-bold uppercase tracking-widest text-white/80">
+            <div className="mt-6 flex items-center gap-3 sm:gap-4">
+              <span className="h-10 w-1 shrink-0 bg-[#F5C842]" />
+              <p className="text-xs font-bold uppercase tracking-widest text-white/80 sm:text-sm">
                 Passion. Purpose. Performance.
               </p>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-2 rotate-3 rounded-[2rem] border border-[#F5C842]/20" />
 
-            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-gradient-to-br from-[#6D35C8]/70 via-[#351568] to-[#241044] p-7 shadow-[0_25px_80px_rgba(75,31,167,0.3)] md:p-8">
-              <div className="absolute -right-10 -top-10 text-[150px] font-black leading-none text-white/[0.035]">
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-[#6D35C8]/70 via-[#351568] to-[#241044] p-6 shadow-[0_25px_80px_rgba(75,31,167,0.3)] sm:rounded-[1.8rem] sm:p-7 md:p-8">
+              <div className="absolute -right-6 -top-8 text-[100px] font-black leading-none text-white/[0.035] sm:-right-10 sm:-top-10 sm:text-[150px]">
                 XI
               </div>
 
-              <p className="relative text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+              <p className="relative text-[10px] font-black uppercase tracking-[0.25em] text-[#F5C842] sm:text-xs sm:tracking-[0.3em]">
                 Our mission
               </p>
 
-              <h3 className="relative mt-4 text-3xl font-black uppercase leading-tight md:text-4xl">
+              <h3 className="relative mt-4 text-2xl font-black uppercase leading-tight sm:text-3xl md:text-4xl">
                 Build better players.
                 <br />
                 <span className="text-[#F5C842]">
@@ -230,11 +222,11 @@ function BrandStorySections() {
                   "Partner with schools and communities to promote sport.",
                   "Inspire discipline, teamwork, leadership, and excellence.",
                 ].map((item, index) => (
-                  <li key={item} className="flex items-start gap-4">
-                    <span className="mt-0.5 text-sm font-black text-[#F5C842]">
+                  <li key={item} className="flex items-start gap-3 sm:gap-4">
+                    <span className="mt-0.5 shrink-0 text-xs font-black text-[#F5C842] sm:text-sm">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-sm leading-6 text-white/75">
+                    <span className="text-xs leading-6 text-white/75 sm:text-sm">
                       {item}
                     </span>
                   </li>
@@ -246,16 +238,16 @@ function BrandStorySections() {
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-[#F5F3EE] px-5 py-14 md:px-8 md:py-16">
+      <section className="bg-[#F5F3EE] px-4 py-12 sm:px-5 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#6D35C8]">
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#6D35C8] sm:text-xs sm:tracking-[0.3em]">
                 What drives us
               </p>
 
               <h2
-                className="text-5xl font-black uppercase leading-none text-[#241044] md:text-7xl"
+                className="text-[clamp(2.25rem,9vw,4.5rem)] font-black uppercase leading-none text-[#241044]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 Our core values<span className="text-[#6D35C8]">.</span>
@@ -272,17 +264,17 @@ function BrandStorySections() {
             {CORE_VALUES.map((value, index) => (
               <article
                 key={value.number}
-                className="group relative min-h-[220px] overflow-hidden rounded-2xl border border-[#6D35C8]/10 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-[#6D35C8]/30 hover:bg-[#351568] hover:shadow-[0_20px_45px_rgba(75,31,167,0.18)]"
+                className="group relative min-h-[200px] overflow-hidden rounded-2xl border border-[#6D35C8]/10 bg-white p-5 transition-all duration-500 hover:-translate-y-2 hover:border-[#6D35C8]/30 hover:bg-[#351568] hover:shadow-[0_20px_45px_rgba(75,31,167,0.18)] sm:min-h-[220px] sm:p-6"
               >
-                <span className="absolute -right-3 -top-8 text-8xl font-black text-[#6D35C8]/[0.06] transition-colors duration-500 group-hover:text-white/[0.06]">
+                <span className="absolute -right-3 -top-8 text-7xl font-black text-[#6D35C8]/[0.06] transition-colors duration-500 group-hover:text-white/[0.06] sm:text-8xl">
                   {value.number}
                 </span>
 
-                <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-[#6D35C8]/10 text-lg font-black text-[#6D35C8] transition-all duration-500 group-hover:bg-[#F5C842] group-hover:text-[#241044]">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-[#6D35C8]/10 text-base font-black text-[#6D35C8] transition-all duration-500 group-hover:bg-[#F5C842] group-hover:text-[#241044] sm:h-11 sm:w-11 sm:text-lg">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <h3 className="relative mt-6 text-2xl font-black uppercase text-[#241044] transition-colors duration-500 group-hover:text-white">
+                <h3 className="relative mt-5 text-xl font-black uppercase text-[#241044] transition-colors duration-500 group-hover:text-white sm:mt-6 sm:text-2xl">
                   {value.title}
                 </h3>
 
@@ -298,15 +290,15 @@ function BrandStorySections() {
       </section>
 
       {/* SCHOOL + SOCIETY PROGRAMS */}
-      <section className="bg-white px-5 py-14 md:px-8 md:py-16">
+      <section className="bg-white px-4 py-12 sm:px-5 md:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 max-w-2xl">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#6D35C8]">
+            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#6D35C8] sm:text-xs sm:tracking-[0.3em]">
               Football for every community
             </p>
 
             <h2
-              className="text-5xl font-black uppercase leading-[0.95] text-[#241044] md:text-7xl"
+              className="text-[clamp(2.25rem,9vw,4.5rem)] font-black uppercase leading-[0.95] text-[#241044]"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               Take the game
@@ -314,34 +306,34 @@ function BrandStorySections() {
               <span className="text-[#6D35C8]">beyond the pitch.</span>
             </h2>
 
-            <p className="mt-4 max-w-xl leading-7 text-[#241044]/60">
+            <p className="mt-4 max-w-xl text-sm leading-7 text-[#241044]/60 md:text-base">
               We work with schools and residential communities to create
               accessible, structured, and enjoyable football experiences for
               children and young players.
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
             {programs.map((program) => (
               <article
                 key={program.number}
-                className={`group relative overflow-hidden rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1 md:p-8 ${program.dark
+                className={`group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 sm:rounded-3xl sm:p-7 md:p-8 ${program.dark
                   ? "bg-[#351568] text-white hover:shadow-[0_25px_55px_rgba(75,31,167,0.25)]"
                   : "border border-[#6D35C8]/10 bg-[#F5F3EE] text-[#241044] hover:shadow-[0_25px_55px_rgba(75,31,167,0.12)]"
                   }`}
               >
-                <div className="absolute -right-8 -top-12 text-[150px] font-black leading-none opacity-[0.04]">
+                <div className="absolute -right-6 -top-10 text-[100px] font-black leading-none opacity-[0.04] sm:-right-8 sm:-top-12 sm:text-[150px]">
                   {program.number}
                 </div>
 
                 <p
-                  className={`relative text-xs font-black uppercase tracking-[0.25em] ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
+                  className={`relative text-[10px] font-black uppercase tracking-[0.2em] sm:text-xs sm:tracking-[0.25em] ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
                     }`}
                 >
                   {program.number} / {program.label}
                 </p>
 
-                <h3 className="relative mt-5 max-w-md text-3xl font-black uppercase leading-tight md:text-4xl">
+                <h3 className="relative mt-4 max-w-md text-2xl font-black uppercase leading-tight sm:mt-5 sm:text-3xl md:text-4xl">
                   {program.title}
                 </h3>
 
@@ -357,11 +349,11 @@ function BrandStorySections() {
                     }`}
                 />
 
-                <ul className="relative grid gap-3 sm:grid-cols-2">
+                <ul className="relative grid gap-2.5 sm:grid-cols-2 sm:gap-3">
                   {program.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm">
+                    <li key={item} className="flex items-start gap-2.5 text-sm sm:gap-3">
                       <span
-                        className={`font-black ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
+                        className={`shrink-0 font-black ${program.dark ? "text-[#F5C842]" : "text-[#6D35C8]"
                           }`}
                       >
                         +
@@ -383,17 +375,17 @@ function BrandStorySections() {
       </section>
 
       {/* CLUB + COMPETITIONS */}
-      <section className="relative overflow-hidden bg-[#241044] px-5 py-14 text-white md:px-8 md:py-16">
+      <section className="relative overflow-hidden bg-[#241044] px-4 py-12 text-white sm:px-5 md:px-8 md:py-16">
         <div className="pointer-events-none absolute -right-40 top-0 h-[400px] w-[400px] rounded-full bg-[#6D35C8]/30 blur-[120px]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.25em] text-[#F5C842] sm:text-xs sm:tracking-[0.3em]">
               ACE XI Football Club
             </p>
 
             <h2
-              className="text-5xl font-black uppercase leading-[0.9] md:text-7xl"
+              className="text-[clamp(2.25rem,9vw,4.5rem)] font-black uppercase leading-[0.9]"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               Built to compete.
@@ -401,14 +393,14 @@ function BrandStorySections() {
               <span className="text-[#F5C842]">Driven to win.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl leading-7 text-white/60">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 md:text-base">
               Football teaches that no one wins alone. AceXI creates
               opportunities for aspiring players to compete through organized
               teams, leagues, and tournaments while developing discipline,
               teamwork, and a mindset of continuous improvement.
             </p>
 
-            <p className="mt-3 max-w-xl leading-7 text-white/50">
+            <p className="mt-3 max-w-xl text-sm leading-7 text-white/50 md:text-base">
               Our competitions are designed to provide valuable match
               experience, encourage sportsmanship, and bring the football
               community together.
@@ -419,17 +411,17 @@ function BrandStorySections() {
             {competitions.map((item, index) => (
               <div
                 key={item}
-                className="group flex min-h-36 flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-[#6D35C8]/[0.18] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30"
+                className="group flex min-h-32 flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-[#6D35C8]/[0.18] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30 sm:min-h-36 sm:p-5"
               >
-                <span className="text-3xl font-black text-[#F5C842]/95 transition-colors group-hover:text-[#F5C842]">
+                <span className="text-2xl font-black text-[#F5C842]/95 transition-colors group-hover:text-[#F5C842] sm:text-3xl">
                   0{index + 1}
                 </span>
 
-                <p className="text-sm font-black uppercase leading-snug">
+                <p className="text-xs font-black uppercase leading-snug sm:text-sm">
                   {item}
                 </p>
 
-                <div className="mt-3 h-1 w-8 bg-[#F5C842] transition-all duration-300 group-hover:w-full" />
+                <div className="mt-3 h-1 w-6 bg-[#F5C842] transition-all duration-300 group-hover:w-full sm:w-8" />
               </div>
             ))}
           </div>
@@ -437,21 +429,20 @@ function BrandStorySections() {
       </section>
 
       {/* SERVICES + WHO WE SERVE */}
-      <section className="relative overflow-hidden bg-[#F5F3EE] px-5 py-12 md:px-8 md:py-16">
+      <section className="relative overflow-hidden bg-[#F5F3EE] px-4 py-12 sm:px-5 md:px-8 md:py-16">
         <div className="pointer-events-none absolute -right-32 top-0 h-80 w-80 rounded-full bg-[#6D35C8]/10 blur-[100px]" />
 
         <div className="relative mx-auto max-w-7xl">
-          <div className="grid gap-6 lg:grid-cols-2">
-
+          <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
             {/* SERVICES - LEFT */}
-            <div className="rounded-3xl bg-[#241044] p-6 text-white md:p-8">
-              <p className="mb-3 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-[#F5C842]">
-                <span className="h-[2px] w-7 bg-[#F5C842]" />
+            <div className="rounded-2xl bg-[#241044] p-5 text-white sm:rounded-3xl sm:p-6 md:p-8">
+              <p className="mb-3 flex items-center gap-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#F5C842] sm:gap-3 sm:text-[11px] sm:tracking-[0.25em]">
+                <span className="h-[2px] w-6 shrink-0 bg-[#F5C842] sm:w-7" />
                 What we do
               </p>
 
               <h2
-                className="text-5xl font-black uppercase leading-[0.88] md:text-6xl"
+                className="text-[clamp(2rem,8vw,3.75rem)] font-black uppercase leading-[0.88]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 One game.
@@ -465,21 +456,21 @@ function BrandStorySections() {
                 their potential.
               </p>
 
-              <div className="mt-7 grid gap-2 sm:grid-cols-2">
+              <div className="mt-6 grid gap-2 sm:grid-cols-2 md:mt-7">
                 {ACE_SERVICES.map((service, index) => (
                   <article
                     key={service}
-                    className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-3 transition-all duration-300 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30"
+                    className="group flex min-h-[68px] items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.05] p-3 transition-all duration-300 hover:border-[#F5C842]/50 hover:bg-[#6D35C8]/30 sm:gap-3"
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#F5C842]/10 text-xs font-black text-[#F5C842] transition-colors group-hover:bg-[#F5C842] group-hover:text-[#241044]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F5C842]/10 text-[10px] font-black text-[#F5C842] transition-colors group-hover:bg-[#F5C842] group-hover:text-[#241044] sm:h-9 sm:w-9 sm:text-xs">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <span className="text-xs font-bold uppercase leading-snug text-white/85 transition-colors group-hover:text-[#F5C842]">
+                    <span className="text-[11px] font-bold uppercase leading-snug text-white/85 transition-colors group-hover:text-[#F5C842] sm:text-xs">
                       {service}
                     </span>
 
-                    <span className="ml-auto text-sm text-white/30 transition-all group-hover:translate-x-1 group-hover:text-[#F5C842]">
+                    <span className="ml-auto shrink-0 text-sm text-white/30 transition-all group-hover:translate-x-1 group-hover:text-[#F5C842]">
                       ↗
                     </span>
                   </article>
@@ -488,14 +479,14 @@ function BrandStorySections() {
             </div>
 
             {/* WHO WE SERVE - RIGHT */}
-            <div className="rounded-3xl border border-[#6D35C8]/10 bg-white p-6 md:p-8">
-              <p className="mb-3 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.25em] text-[#6D35C8]">
-                <span className="h-[2px] w-7 bg-[#6D35C8]" />
+            <div className="rounded-2xl border border-[#6D35C8]/10 bg-white p-5 sm:rounded-3xl sm:p-6 md:p-8">
+              <p className="mb-3 flex items-center gap-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#6D35C8] sm:gap-3 sm:text-[11px] sm:tracking-[0.25em]">
+                <span className="h-[2px] w-6 shrink-0 bg-[#6D35C8] sm:w-7" />
                 Who we serve
               </p>
 
               <h2
-                className="text-5xl font-black uppercase leading-[0.88] text-[#241044] md:text-6xl"
+                className="text-[clamp(2rem,8vw,3.75rem)] font-black uppercase leading-[0.88] text-[#241044]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 The game is
@@ -508,44 +499,43 @@ function BrandStorySections() {
                 there's a place for you at AceXI.
               </p>
 
-              <div className="mt-7 grid grid-cols-2 gap-2">
+              <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 md:mt-7">
                 {WHO_WE_SERVE.map((audience, index) => (
                   <article
                     key={audience}
-                    className="group flex min-h-[76px] items-center gap-3 rounded-xl border border-[#6D35C8]/10 bg-[#F5F3EE] p-3 transition-all duration-300 hover:border-[#6D35C8]/40 hover:bg-[#351568]"
+                    className="group flex min-h-[68px] items-center gap-2.5 rounded-xl border border-[#6D35C8]/10 bg-[#F5F3EE] p-3 transition-all duration-300 hover:border-[#6D35C8]/40 hover:bg-[#351568] sm:gap-3"
                   >
-                    <span className="text-lg font-black text-[#6D35C8]/50 transition-colors group-hover:text-[#F5C842]">
+                    <span className="shrink-0 text-base font-black text-[#6D35C8]/50 transition-colors group-hover:text-[#F5C842] sm:text-lg">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <span className="text-xs font-bold uppercase leading-snug text-[#241044] transition-colors group-hover:text-white">
+                    <span className="text-[11px] font-bold uppercase leading-snug text-[#241044] transition-colors group-hover:text-white sm:text-xs">
                       {audience}
                     </span>
 
-                    <span className="ml-auto text-sm text-[#6D35C8]/40 transition-colors group-hover:text-[#F5C842]">
+                    <span className="ml-auto shrink-0 text-sm text-[#6D35C8]/40 transition-colors group-hover:text-[#F5C842]">
                       ↗
                     </span>
                   </article>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* LESSONS + COMMUNITY */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#241044] via-[#351568] to-[#6D35C8] px-5 py-14 text-white md:px-8 md:py-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#241044] via-[#351568] to-[#6D35C8] px-4 py-12 text-white sm:px-5 md:px-8 md:py-16">
         <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#F5C842]/10 blur-[100px]" />
 
         <div className="relative mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-4 text-xs font-black uppercase tracking-[0.3em] text-[#F5C842]">
+            <p className="mb-4 text-[10px] font-black uppercase tracking-[0.25em] text-[#F5C842] sm:text-xs sm:tracking-[0.3em]">
               Lessons beyond the game
             </p>
 
             <h2
-              className="text-5xl font-black uppercase leading-[0.92] md:text-7xl"
+              className="text-[clamp(2.25rem,9vw,4.5rem)] font-black uppercase leading-[0.92]"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               Character is built
@@ -553,7 +543,7 @@ function BrandStorySections() {
               <span className="text-[#F5C842]">one match at a time.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl leading-7 text-white/60">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 md:text-base">
               Football teaches players to follow rules, respect opponents,
               respond to setbacks, and handle success with humility. These
               lessons extend beyond the pitch, helping shape stronger
@@ -564,7 +554,7 @@ function BrandStorySections() {
               {lessons.map((value) => (
                 <span
                   key={value}
-                  className="rounded-full border border-[#F5C842]/25 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#F5C842]"
+                  className="rounded-full border border-[#F5C842]/25 bg-white/[0.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#F5C842] sm:px-4 sm:py-2 sm:text-xs"
                 >
                   {value}
                 </span>
@@ -572,16 +562,16 @@ function BrandStorySections() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.07] p-7 backdrop-blur-xl md:p-8">
-            <div className="absolute -right-4 -top-8 text-[130px] font-black leading-none text-white/[0.04]">
+          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[0.07] p-6 backdrop-blur-xl sm:rounded-3xl sm:p-7 md:p-8">
+            <div className="absolute -right-3 -top-6 text-[90px] font-black leading-none text-white/[0.04] sm:-right-4 sm:-top-8 sm:text-[130px]">
               XI
             </div>
 
-            <p className="relative text-xs font-black uppercase tracking-[0.25em] text-[#F5C842]">
+            <p className="relative text-[10px] font-black uppercase tracking-[0.2em] text-[#F5C842] sm:text-xs sm:tracking-[0.25em]">
               Moments that define us
             </p>
 
-            <h3 className="relative mt-5 text-3xl font-black uppercase leading-tight md:text-4xl">
+            <h3 className="relative mt-4 text-2xl font-black uppercase leading-tight sm:mt-5 sm:text-3xl md:text-4xl">
               A heroic save.
               <br />
               A missed penalty.
@@ -589,7 +579,7 @@ function BrandStorySections() {
               <span className="text-[#F5C842]">A last-minute goal.</span>
             </h3>
 
-            <p className="relative mt-5 leading-7 text-white/55">
+            <p className="relative mt-4 text-sm leading-7 text-white/55 sm:mt-5 md:text-base">
               Football is full of moments that stay with us. They build
               confidence, character, and resilience. Win or lose, every match
               leaves a mark — and every new player, fan, and generation adds to
@@ -597,15 +587,13 @@ function BrandStorySections() {
             </p>
 
             <div className="relative mt-6 border-t border-white/15 pt-5">
-              <p className="text-lg font-black uppercase tracking-wide text-[#F5C842]">
+              <p className="text-base font-black uppercase tracking-wide text-[#F5C842] sm:text-lg">
                 The story never ends.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-
     </>
   );
 }
@@ -696,6 +684,7 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        padding: "1rem",
         background:
           "radial-gradient(ellipse at 50% 40%, #1c1c3a 0%, #0d0d18 60%, #050508 100%)",
         opacity: fadeOut ? 0 : 1,
@@ -716,7 +705,7 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "1.1rem",
+          fontSize: "clamp(0.9rem, 4vw, 1.1rem)",
           letterSpacing: "0.5em",
           color: "rgba(245,200,66,0.7)",
           marginBottom: "1.5rem",
@@ -726,7 +715,14 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
       >
         ACE XI
       </div>
-      <div style={{ position: "relative", width: 256, height: 256 }}>
+      {/* Responsive canvas: smaller on phones */}
+      <div
+        style={{
+          position: "relative",
+          width: "min(256px, 72vw)",
+          height: "min(256px, 72vw)",
+        }}
+      >
         <Canvas
           camera={{ position: [0, 1, 8], fov: 35 }}
           style={{ width: "100%", height: "100%" }}
@@ -754,17 +750,18 @@ function LoadingScreen({ onDone }: { onDone: () => void }) {
         <p
           style={{
             color: "rgba(255,255,255,0.8)",
-            fontSize: "0.7rem",
-            letterSpacing: "0.35em",
+            fontSize: "0.65rem",
+            letterSpacing: "0.3em",
             fontWeight: 300,
             textTransform: "uppercase",
+            textAlign: "center",
           }}
         >
           Loading Experience{dots}
         </p>
         <div
           style={{
-            width: 192,
+            width: "min(192px, 60vw)",
             height: 1,
             background: "rgba(255,255,255,0.1)",
             borderRadius: 999,
@@ -833,12 +830,22 @@ function Hero() {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ height: "100vh" }}
+      style={{
+        // Use 100dvh where supported for mobile browser chrome, fallback to 100vh
+        height: "100vh",
+        minHeight: "100svh",
+      }}
     >
+      <style>{`
+        @supports (height: 100dvh) {
+          .hero-ace { height: 100dvh !important; }
+        }
+      `}</style>
       <img
         src={herobg}
         alt="ACE XI Football Academy"
-        className="w-full h-full object-cover"
+        className="hero-ace w-full h-full object-cover"
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
     </section>
   );
@@ -876,32 +883,56 @@ const PROGRAMS = [
 
 function Programs() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-28 md:px-8 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-4 py-16 sm:px-5 sm:py-20 md:px-8 md:py-32">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14">
-          <h2 className="font-black text-[#0B0612] leading-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+        <div className="mb-8 sm:mb-12 md:mb-14">
+          <h2
+            className="font-black text-[#0B0612] leading-tight"
+            style={{ fontSize: "clamp(1.75rem, 6vw, 4rem)" }}
+          >
             Football by ACE XI
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-3 md:gap-6">
           {PROGRAMS.map((p) => (
             <div
               key={p.num}
-              className="rounded-3xl p-8 flex flex-col gap-5 transition-transform hover:-translate-y-2"
-              style={{ background: p.color, color: p.text, minHeight: 420 }}
+              className="rounded-3xl p-6 sm:p-7 md:p-8 flex flex-col gap-4 sm:gap-5 transition-transform hover:-translate-y-2"
+              style={{
+                background: p.color,
+                color: p.text,
+                minHeight: "auto",
+              }}
             >
-              <div className="flex items-start justify-between">
-                <span className="text-5xl font-black opacity-40">{p.num}</span>
-                <span className="text-s font-bold uppercase tracking-wider opacity-80">{p.tag}</span>
+              <div className="flex items-start justify-between gap-3">
+                <span
+                  className="font-black opacity-40"
+                  style={{ fontSize: "clamp(2.25rem, 7vw, 3rem)" }}
+                >
+                  {p.num}
+                </span>
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider opacity-80 text-right pt-2">
+                  {p.tag}
+                </span>
               </div>
-              <h3 className="text-3xl font-black">{p.name}</h3>
-              <p className="opacity-85">{p.desc}</p>
-              <div className="mt-auto flex flex-col gap-2">
+              <h3
+                className="font-black"
+                style={{ fontSize: "clamp(1.5rem, 5vw, 1.875rem)" }}
+              >
+                {p.name}
+              </h3>
+              <p className="opacity-85 text-sm sm:text-base leading-relaxed">
+                {p.desc}
+              </p>
+              <div className="mt-auto flex flex-col gap-2 pt-2">
                 {p.batches.map((b) => (
                   <div
                     key={b}
-                    className="px-4 py-2 rounded-full text-sm font-semibold"
-                    style={{ background: "rgba(255,255,255,0.15)", color: p.text }}
+                    className="px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold leading-snug"
+                    style={{
+                      background: "rgba(255,255,255,0.15)",
+                      color: p.text,
+                    }}
                   >
                     {b}
                   </div>
@@ -919,11 +950,20 @@ function Programs() {
 function StatBlock({ n, label, active }: { n: number; label: string; active: boolean }) {
   const count = useCountUp(n, active);
   return (
-    <div>
-      <div className="font-black" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "#F5C842", lineHeight: 1 }}>
+    <div className="text-center md:text-left">
+      <div
+        className="font-black"
+        style={{
+          fontSize: "clamp(2.25rem, 9vw, 5rem)",
+          color: "#F5C842",
+          lineHeight: 1,
+        }}
+      >
         {count}+
       </div>
-      <div className="text-white/70 mt-2 font-semibold">{label}</div>
+      <div className="text-white/70 mt-2 font-semibold text-xs sm:text-sm md:text-base">
+        {label}
+      </div>
     </div>
   );
 }
@@ -931,193 +971,49 @@ function StatBlock({ n, label, active }: { n: number; label: string; active: boo
 function TrustStats() {
   const { ref, inView } = useInView(0.3);
   return (
-    <section ref={ref} className="py-24 px-5 md:px-8" style={{ background: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)" }}>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
+    <section
+      ref={ref}
+      className="px-4 py-16 sm:px-5 sm:py-20 md:px-8 md:py-24"
+      style={{ background: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)" }}
+    >
+      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-2 md:gap-14">
         <div>
-          <h2 className="text-white font-black mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h2
+            className="text-white font-black mb-8 md:mb-10"
+            style={{ fontSize: "clamp(1.5rem, 6vw, 3rem)" }}
+          >
             Numbers That Speak
           </h2>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             <StatBlock n={150} label="Players Trained" active={inView} />
             <StatBlock n={25} label="Tournaments" active={inView} />
             <StatBlock n={3} label="Partner Schools" active={inView} />
           </div>
         </div>
         <div className="md:border-l md:border-white/10 md:pl-10">
-          <div className="text-7xl font-black" style={{ color: "#4B1FA7" }}>"</div>
-          <p className="text-2xl md:text-3xl text-white font-bold leading-snug">
+          <div
+            className="font-black leading-none"
+            style={{ color: "#4B1FA7", fontSize: "clamp(3rem, 10vw, 4.5rem)" }}
+          >
+            "
+          </div>
+          <p
+            className="text-white font-bold leading-snug"
+            style={{ fontSize: "clamp(1.25rem, 5vw, 1.875rem)" }}
+          >
             We don't just train players.
             <br />
             <span style={{ color: "#F5C842" }}>We build champions.</span>
           </p>
-          <div className="mt-6 text-white/60 font-semibold">— ACE XI Football Academy</div>
+          <div className="mt-5 md:mt-6 text-white/60 font-semibold text-sm md:text-base">
+            — ACE XI Football Academy
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-// ─── EVENTS ───────────────────────────────────────────────────────────────────
-const EVENTS = [
-  {
-    num: "01",
-    name: "ACE Cup Championship",
-    detail: "25+ teams · All age groups · Annual",
-    tag: "Annual · Mumbai",
-    expanded: "The ACE Cup is our flagship annual tournament, drawing 25+ teams from across Mumbai. Players across all age groups compete in structured brackets, experiencing high-stakes match play in a professional environment.",
-  },
-  {
-    num: "02",
-    name: "School Football League",
-    detail: "Partner school teams compete",
-    tag: "Inter-School · Mumbai",
-    expanded: "Our partner schools face off in a round-robin league format throughout the academic year. This gives school-age players regular competitive exposure and builds healthy rivalries across Mumbai institutions.",
-  },
-  {
-    num: "03",
-    name: "Girls' Football Fiesta",
-    detail: "Dedicated girls' tournament",
-    tag: "Girls' Special",
-    expanded: "A dedicated stage for our girls' program — celebrating female footballers with a full tournament experience. Encouraging inclusivity and competitive growth for every girl who trains at ACE XI.",
-  },
-  {
-    num: "04",
-    name: "Summer Showdown",
-    detail: "Intensive tournament series",
-    tag: "Summer Special",
-    expanded: "Running alongside our Summer Camp, the Summer Showdown is an intensive short-format tournament series. Players apply their skills in real match scenarios during the peak training season.",
-  },
-];
-
-/*function Events() {
-  const [open, setOpen] = useState<string | null>(null);
-  const toggle = (num: string) => setOpen((prev) => (prev === num ? null : num));
-
-  return (
-    <section className="py-24 px-5 md:px-8" style={{ background: "linear-gradient(135deg, #0B0612 0%, #241044 55%, #4B1FA7 100%)" }}>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
-        <div>
-          <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#F5C842" }}>
-            ORGANIZED BY ACE XI
-          </div>
-          <h2
-            className="font-black text-white leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
-          >
-            Events &<br />Tournaments
-          </h2>
-          <p className="mt-6 text-white/50 text-lg max-w-md">
-            ACE XI has organized and hosted multiple tournaments across Mumbai, bringing together schools and academies citywide.
-          </p>
-          <div className="mt-12 inline-block">
-            <div
-              className="rounded-2xl px-8 py-6"
-              style={{ background: "rgba(75,31,167,0.25)", border: "1px solid rgba(75,31,167,0.4)" }}
-            >
-              <div
-                className="font-black"
-                style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "#F5C842", lineHeight: 1 }}
-              >
-                4+
-              </div>
-              <div className="text-white/60 mt-1 font-semibold text-sm">Tournaments Hosted</div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          {EVENTS.map((ev) => {
-            const isOpen = open === ev.num;
-            return (
-              <div
-                key={ev.num}
-                className="border-b transition-colors duration-300"
-                style={{ borderColor: isOpen ? "rgba(75,31,167,0.6)" : "rgba(255,255,255,0.08)" }}
-              >
-                <button
-                  onClick={() => toggle(ev.num)}
-                  className="w-full flex items-center gap-5 py-6 text-left"
-                  aria-expanded={isOpen}
-                >
-                  <span
-                    className="text-3xl font-black transition-all duration-300"
-                    style={{ color: isOpen ? "#F5C842" : "rgba(255,255,255,0.2)" }}
-                  >
-                    {ev.num}
-                  </span>
-                  <div className="flex-1">
-                    <div
-                      className="font-bold text-lg transition-colors duration-300"
-                      style={{ color: isOpen ? "#F5C842" : "#fff" }}
-                    >
-                      {ev.name}
-                    </div>
-                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-                      {ev.detail}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="hidden sm:inline text-s font-bold px-3 py-1 rounded-full transition-all duration-300"
-                      style={{
-                        background: isOpen ? "#F5C842" : "rgba(245,200,66,0.1)",
-                        color: isOpen ? "#0B0612" : "#F5C842",
-                      }}
-                    >
-                      {ev.tag}
-                    </span>
-                    <span
-                      className="flex items-center justify-center rounded-full flex-shrink-0 transition-all duration-300"
-                      style={{
-                        width: 28,
-                        height: 28,
-                        background: isOpen ? "#F5C842" : "rgba(245,200,66,0.12)",
-                      }}
-                    >
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        style={{
-                          transition: "transform 0.35s cubic-bezier(0.34,1.4,0.64,1)",
-                          transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-                        }}
-                      >
-                        <path
-                          d="M6 1V11M1 6H11"
-                          stroke={isOpen ? "#0B0612" : "#F5C842"}
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </button>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateRows: isOpen ? "1fr" : "0fr",
-                    transition: "grid-template-rows 0.38s cubic-bezier(0.4,0,0.2,1)",
-                  }}
-                >
-                  <div style={{ overflow: "hidden" }}>
-                    <p
-                      className="text-sm leading-relaxed pb-6 pl-[calc(1.875rem+1.25rem)]"
-                      style={{ color: "rgba(255,255,255,0.55)", maxWidth: "90%" }}
-                    >
-                      {ev.expanded}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-*/
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────────────────
 const ACH = [
   {
@@ -1146,21 +1042,21 @@ const ACH = [
 function Achievements() {
   return (
     <section
-      className="overflow-hidden px-5 py-20 md:px-8 md:py-24"
+      className="overflow-hidden px-4 py-16 sm:px-5 sm:py-20 md:px-8 md:py-24"
       style={{
         background:
           "linear-gradient(135deg, #F5F3EE 0%, #ffffff 55%, #eee8fa 100%)",
       }}
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
-          <p className="mb-3 text-s font-bold tracking-[0.25em] text-[#4B1FA7]">
+        <div className="mb-8 sm:mb-10">
+          <p className="mb-3 text-[10px] sm:text-xs font-bold tracking-[0.25em] text-[#4B1FA7]">
             OUR JOURNEY
           </p>
           <h2
             className="font-black uppercase leading-tight"
             style={{
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              fontSize: "clamp(1.75rem, 6vw, 4rem)",
               background: "linear-gradient(90deg, #0B0612, #4B1FA7)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -1170,30 +1066,27 @@ function Achievements() {
           </h2>
         </div>
 
-        <div className="flex flex-nowrap gap-5 overflow-x-auto pb-6 snap-x snap-mandatory">
-          {ACH.map((item, index) => (
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+          {ACH.map((item) => (
             <article
               key={item.title}
-              className="w-[280px] min-w-[280px] flex-shrink-0 snap-start rounded-2xl p-6 text-white shadow-xl transition-transform duration-300 hover:-translate-y-2 md:w-[calc(20%-16px)] md:min-w-0"
+              className="rounded-2xl p-5 sm:p-6 text-white shadow-xl transition-transform duration-300 hover:-translate-y-2"
               style={{
                 background: item.bg,
-                minHeight: 245,
+                minHeight: 200,
               }}
             >
-              <div className="mb-5 text-4xl">{item.emoji}</div>
+              <div className="mb-4 text-3xl sm:text-4xl">{item.emoji}</div>
 
-              <p className="mb-3 text-s font-bold uppercase tracking-wider text-[#F5C842]">
+              <p className="mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#F5C842]">
                 {item.subtitle}
               </p>
 
-              <h3 className="mb-3 text-xl font-black leading-tight">
+              <h3 className="mb-3 text-lg sm:text-xl font-black leading-tight">
                 {item.title}
               </h3>
 
-              <p className="text-sm leading-6 text-white/75">
-                {item.desc}
-              </p>
-
+              <p className="text-sm leading-6 text-white/75">{item.desc}</p>
             </article>
           ))}
         </div>
@@ -1214,50 +1107,56 @@ const WHY = [
 
 function WhyACE() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-5 py-28 md:px-8 md:py-32">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F5F3EE] via-white to-[#EEE8FA] px-4 py-16 sm:px-5 sm:py-20 md:px-8 md:py-32">
+      <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-2 md:gap-14">
         <div className="md:sticky md:top-24 md:self-start">
-          <div className="text-s font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
+          <div className="text-[10px] sm:text-xs font-bold tracking-widest mb-3" style={{ color: "#4B1FA7" }}>
             MAKE THE RIGHT CHOICE
           </div>
-          <h2 className="font-black text-[#0B0612] leading-[0.95]" style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}>
+          <h2
+            className="font-black text-[#0B0612] leading-[0.95]"
+            style={{ fontSize: "clamp(2.5rem, 12vw, 6rem)" }}
+          >
             Why<br />Choose<br />
             ACE?
           </h2>
-          <p className="mt-6 text-[#0B0612]/70 text-lg max-w-md">
+          <p className="mt-6 text-[#0B0612]/70 text-base sm:text-lg max-w-md">
             We're not just another football academy. We're a system designed to bring out the best in every player.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full font-bold text-white"
+            className="inline-flex items-center gap-2 mt-8 px-6 py-3.5 rounded-full font-bold text-white transition-transform hover:scale-105"
             style={{ background: "linear-gradient(135deg, #4B1FA7, #713BD1, #A77BEB)" }}
           >
             Join ACE XI <ChevronRight size={18} />
           </Link>
         </div>
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           {WHY.map((item) => (
             <div
               key={item.t}
-              className="rounded-3xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-8 text-[#4B1FA7] shadow-[0_10px_35px_rgba(75,31,167,0.10)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#4B1FA7]/40 hover:shadow-[0_18px_45px_rgba(75,31,167,0.20)]"
+              className="rounded-2xl sm:rounded-3xl border border-white/70 bg-gradient-to-br from-white/90 via-white/75 to-[#EEE8FA]/80 p-5 sm:p-6 md:p-8 text-[#4B1FA7] shadow-[0_10px_35px_rgba(75,31,167,0.10)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#4B1FA7]/40 hover:shadow-[0_18px_45px_rgba(75,31,167,0.20)]"
             >
-              <div className="font-bold text-lg text-[#4B1FA7] mb-2">{item.t}</div>
+              <div className="font-bold text-base sm:text-lg text-[#4B1FA7] mb-2">{item.t}</div>
               <p className="text-sm text-[#0B0612]/65">{item.d}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-20">
+      <div className="max-w-7xl mx-auto mt-12 sm:mt-16 md:mt-20">
         <div
-          className="rounded-3xl p-10 md:p-16 text-center"
+          className="rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-16 text-center"
           style={{ background: "linear-gradient(135deg, #4B1FA7, #2a0f6b)" }}
         >
-          <h3 className="font-black text-white mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h3
+            className="font-black text-white mb-6"
+            style={{ fontSize: "clamp(1.5rem, 6vw, 3rem)" }}
+          >
             Ready to Join ACE XI?
           </h3>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-[#0B0612]"
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full font-bold text-[#0B0612] transition-transform hover:scale-105"
             style={{ background: "linear-gradient(135deg, #F5C842, #FFD966, #FFF0B3)" }}
           >
             Get Started Today <ArrowUpRight size={18} />
