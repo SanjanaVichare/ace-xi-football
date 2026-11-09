@@ -13,6 +13,7 @@ import SaddamImg from "../assets/Saddam.jpeg";
 import AkashImg from "../assets/Akash.jpeg";
 import AdityaImg from "../assets/Aditya.jpeg";
 import HarshImg from "../assets/Harsh.png";
+import heromobbg from "../assets/image.png"
 import herobg from "../assets/acexi-bg.jpeg";
 
 export const Route = createFileRoute("/")({
@@ -828,25 +829,19 @@ function useCountUp(target: number, active: boolean) {
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{
-        // Use 100dvh where supported for mobile browser chrome, fallback to 100vh
-        height: "100vh",
-        minHeight: "100svh",
-      }}
-    >
-      <style>{`
-        @supports (height: 100dvh) {
-          .hero-ace { height: 100dvh !important; }
-        }
-      `}</style>
-      <img
-        src={herobg}
-        alt="ACE XI Football Academy"
-        className="hero-ace w-full h-full object-cover"
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-      />
+    <section className="hero-ace relative h-screen min-h-[100svh] w-full overflow-hidden">
+      <picture className="block h-full w-full">
+        <source
+          media="(max-width: 767px)"
+          srcSet={heromobbg}
+        />
+
+        <img
+          src={herobg}
+          alt="ACE XI Football Academy"
+          className="h-full w-full object-cover object-center"
+        />
+      </picture>
     </section>
   );
 }
