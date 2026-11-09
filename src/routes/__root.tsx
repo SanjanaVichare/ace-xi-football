@@ -8,6 +8,7 @@ import {
 import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 function NotFoundComponent() {
   return (
@@ -61,6 +62,7 @@ function RootComponent() {
       <HeadContent />
       <Outlet />
       <Scripts />
+      <WhatsAppButton />
     </>
   );
 }
