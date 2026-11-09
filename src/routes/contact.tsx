@@ -28,8 +28,8 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const WHATSAPP_NUMBER = "919082780734";
-const CONTACT_EMAIL = "hello@acexi.football";
+const WHATSAPP_NUMBER = "918452094237";
+const CONTACT_EMAIL = "acexi.official@gmail.com";
 const DISPLAY_PHONE = "+91 90827 80734";
 
 // The supplied contact details only specify Mumbai, not an exact ground address.
